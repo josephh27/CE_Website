@@ -1024,3 +1024,52 @@ footer {
 
     /* Footer ends here */
 }
+=======
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+	/* Font weights */
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semi-bold: 600;
+	--fw-bold: 700;
+
+	/* Font sizes */
+	--fs-100: 0.5rem;
+	--fs-200: 0.75rem;
+	--fs-300: 1rem;
+	--fs-400: 1.25rem;
+	--fs-500: 1.5rem;
+	--fs-600: 2rem;
+	--fs-700: 4rem;
+	--fs-800: 5rem;
+	--fs-900: 6rem;
+	--fs-1000: 7rem;
+
+	/* Paddings */
+	--p-1: 1rem;
+	--p-2: 2rem;
+	--p-3: 3rem;
+	--p-4: 4rem;
+	--p-5: 5rem;
+	--p-6: 6rem;
+	--p-7: 7rem;
+
+	/* Margins */
+	--m-1: 1rem;
+	--m-2: 2rem;
+	--m-3: 3rem;
+	--m-4: 4rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+}
+
