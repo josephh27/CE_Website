@@ -14,23 +14,28 @@ body {
 
 /* Header starts here */
 
+/* Footer */
 header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Header container */
+.header-container {
     position: fixed;
     top: 0;
-    left: 0;
     height: 128px;
     width: 100%;
     max-width: 1280px;
     padding: 24px 40px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    z-index: 10;
 }
 
-/* Logo */
+/* Logo part */
 .logo {
     display: flex;
     align-items: center;
@@ -39,24 +44,21 @@ header {
     text-transform: uppercase;
 }
 
-/* Hides logo on search */
 .logo.hidden {
     visibility: hidden;
 }
 
-/* Logo images */
 .logo img {
     border-radius: 50%;
     margin-right: 16px;
 }
 
-/* Logo name (PUP & College) */
 .logo-name {
     line-height: 20px;
     font-size: 16px;
 }
 
-/* Navigation and Search */
+/* Nav and search */
 .header-items {
     display: flex;
     align-items: center;
@@ -69,11 +71,11 @@ header ul {
     gap: 32px;
 }
 
+/* Nav elements */
 header ul li {
     list-style: none;
 }
 
-/* Main Navs */
 header ul li a {
     position: relative;
     text-decoration: none;
@@ -83,15 +85,27 @@ header ul li a {
     letter-spacing: 1px;
 }
 
-/* Arrow icon */
 header ul li a i {
     padding-left: 6px;
 }
 
-/* Dropdown */
+/* Nav dropdown & dropend */
+
 header ul li .dropdown {
     min-width: 200px;
     top: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+}
+
+.dropdown li .dropend {
+    top: 0;
+    right: 100%;
     display: none;
     flex-direction: column;
     gap: 16px;
@@ -106,19 +120,7 @@ header ul li .dropdown {
     justify-content: space-between;
 }
 
-/* Dropend */
-.dropdown li .dropend {
-    top: 0;
-    right: 100%;
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    position: absolute;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    font-size: 14px;
-}
-
+/* Set width*/
 .dropend.about {
     width: 180px;
 }
@@ -137,7 +139,7 @@ header ul li:focus-within > ul,
     display: flex;
 }
 
-/* Indicator of navs */
+/* Line beneath navs*/
 header ul li a::before {
     content: "";
     position: absolute;
@@ -148,28 +150,28 @@ header ul li a::before {
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
     transform-origin: right;
-    z-index: 1000;
+    z-index: 1;
 }
 
-/* Show indicator on hover */
+/* Show line on hover*/
 header ul li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-/* Search div */
+/* Search div*/
 header .search {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    z-index: 10;
+    z-index: 1000;
     cursor: pointer;
     color: #fff;
 }
 
-/* Search box */
+/* Max length and hides nav */
 .search-box {
     position: absolute;
     right: -100%;
@@ -181,8 +183,7 @@ header .search {
     transition: 0.2s ease-in-out;
 }
 
-
-/* Show search box */
+/* Show seach bar */
 .search-box.active {
     right: 0;
     display: flex;
@@ -208,7 +209,7 @@ header .search {
     transition: 0.2s ease-in-out;
 }
 
-/* Show search button */
+/* Hides search button */
 .search-btn.active {
     left: 0;
 }
@@ -229,7 +230,7 @@ header .search {
     scale: 1;
 }
 
-/* Toggle menu */
+/* Menu button */
 .menu-toggle {
     position: relative;
     display: none;
@@ -237,12 +238,10 @@ header .search {
 
 /* Responsive Design */
 @media (max-width: 1250px) {
-    /* Move search button*/
     .search-btn {
         left: 0;
     }
 
-    /* Show toggle menu */
     .menu-toggle {
         position: absolute;
         display: block;
@@ -253,7 +252,6 @@ header .search {
         z-index: 10;
     }
 
-    /* Menu navigations */
     header .navbar-item {
         position: absolute;
         opacity: 0;
@@ -261,12 +259,10 @@ header .search {
         left: 100%
     }
 
-    /* Hides logo and menu bar */
     .hidden {
         visibility: hidden;
     }
 
-    /* Customize menu */
     header.open .navbar-item {
         height: calc(100vh - 128px);
         width: 100%;
@@ -286,7 +282,6 @@ header .search {
         font-size: 16px;
     }
 
-    /* Customize dropdown */
     header.open .navbar-item .dropdown {
         width: 100%;
         top: 0;
@@ -304,7 +299,6 @@ header .search {
         display: block;
     }
 
-    /* Customize dropend */
     header.open .navbar-item .dropdown li .dropend{
         width: 100%;
         right: 0;
@@ -318,7 +312,6 @@ header .search {
         width: auto;
     }
 
-    /* Display dropdown and dropend */
     header ul li:focus-within > .dropdown,
     .dropdown li a:focus-within > .dropend{
         position: relative;
@@ -327,47 +320,20 @@ header .search {
 }
 
 @media (max-width: 700px) {
-    /* Adjust header height */
-    header {
-        height: auto;
-        padding: 10px 40px;
-    }
-    
-    /* Logo img size */
-    .logo img {
-        width: 60px;
-        height: 60px;
-        margin-right: 8px;
-    }
-
-    /* Logo name size */
     .logo-name {
-        font-size: 12px;
-        line-height: 16px;
+        display: none;
     }
 
-    /* Adjust menu top position */
-    header.open .navbar-item {
-        top: 80px;
-        height: calc(100vh - 80px);
+    header.open .navbar-item li a{
+        display: flex;
+        justify-content: space-between;
     }
 
-    /* Maximize length of list elements */
-    header.open .navbar-item .dropdown li  a, header.open .navbar-item li a{
+    header.open .navbar-item .dropdown li  a{
         display: flex;
         justify-content: space-between;
     }
 }
-
-/* Phone screens */
-@media (max-width: 550px) {
-    /* Hide logo name */
-    .logo-name {
-        display: none;
-    }
-}
-
-/* Header ends here */
 
 /* Start of Hero section placeholder */
 .hero-section-placeholder {
@@ -836,7 +802,7 @@ footer {
 }
 
 /* Logo */
-.logo {
+footer .logo {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -850,14 +816,14 @@ footer {
 }
 
 /* Adjust logo img size */
-.logo img {
+footer .logo img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
 
 /* Modify logo name */
-.logo-name {
+footer .logo-name {
     text-transform: uppercase;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
@@ -865,7 +831,7 @@ footer {
     font-weight: 600;
 }
 
-.logo-name b {
+footer .logo-name b {
     color: #F97D01;
     font-size: 14px;
     font-weight: 400;
@@ -997,28 +963,28 @@ footer {
 
 @media (max-width: 500px) {
     /* Adjust the sizes of footer elements to fit the screen better */
-    .logo {
+    footer .logo {
         gap: 12px;
     }
 
-    .logo img {
+    footer .logo img {
         height: 60px;
         width: 60px;
     }
 
-    .logo-name {
+    footer .logo-name {
         font-size: 12px;
     }
 
-    .logo-name b{
+    footer .logo-name b{
         font-size: 11px;
     }
 
-    .icon-links {
+    footer .icon-links {
         gap: 25px;
     }
 
-    .social-links {
+    footer .social-links {
         font-size: 16px;
     }
 
