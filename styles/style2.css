@@ -16,7 +16,7 @@ body {
 
 /* Header starts here */
 
-/* Footer */
+/* Header */
 header {
     width: 100%;
     display: flex;
@@ -339,12 +339,21 @@ header .search {
 
 /* Header ends here */
 
-.sample-content {
-    height: 100vh;
-    overflow-x: hidden;
-    background-image: url("pup-background-black_01.jpg");
+/* Sample content starts here */
+
+.hero-section-placeholder {
+    height: 440px;
+    background-image: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
     background-size: cover;
     background-position: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+.dept-title-placeholder {
+    position: absolute;
+    top: 288px;
+    left: 168px;
 }
 
 /* Footer starts here */
