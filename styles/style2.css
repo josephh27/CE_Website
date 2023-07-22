@@ -352,8 +352,7 @@ header .search {
 
 .dept-title-placeholder {
     position: absolute;
-    top: 288px;
-    left: 168px;
+    margin: 288px 0 0 168px;
 }
 
 /* Footer starts here */
