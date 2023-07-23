@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* # The Rotating Marker # */
+summary::before {
+  font-family: "Hiragino Mincho ProN", "Open Sans", sans-serif;
+  content: "▶";
+  position: absolute;
+  top: 1rem;
+  left: 0.8rem;
+  transform: rotate(0);
+  transform-origin: center;
+  transition: 0.2s transform ease;
+}
+details[open] > summary:before {
+  transform: rotate(90deg);
+  transition: 0.45s transform ease;
+}
+
+/* # Style 4 # */
+details.style4 summary {
+  padding-right: 2.2rem;
+  padding-left: 1rem;
+}
+details.style4 summary::before {
+  content: "×";
+  color: #FFF;
+  font-size: 2rem;
+  line-height: 1rem;
+  transform: rotate(-45deg);
+  top: 1.2rem;
+  left: unset;
+  right: 0.6rem;
+}
+details[open].style4 > summary:before {
+  transform: rotate(90deg);
+  color: #F00 !important;
+  transition: color ease 2s, transform ease 1s;
+}
+
+summary {
+  border: 4px solid transparent;
+  outline: none;
+  padding: 1rem;
+  display: block;
+  background: #666;
+  color: white;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+details[open] summary,
+summary:hover {
+  color: #FFCA28;
+  background: #444;
+}
+summary:hover strong,
+details[open] summary strong,
+summary:hover::before,
+details[open] summary::before {
+  color: #FFA128;
+}
+.content {
+  padding: 10px;
+  border: 2px solid #888;
+  border-top: none;
+}
+
+    </style>
+</head>
+<body>
+    <details class="style4">
+        <summary>Yet another <strong>STYLE</strong> of indicator.</summary>
+        <div class="content">
+          <p>
+            okay
+          </p>
+          <img src="https://placebear.com/400/200" alt="">
+          <p>
+            Facilis ducimus iure officia quos possimus quaerat iusto, quas, laboriosam sapiente autem ab assumenda eligendi voluptatum nisi eius cumque, tempore reprehenderit optio placeat praesentium non sint repellendus consequuntur? Nihil, soluta.
+          </p>
+        </div>
+      </details>
+</body>
+</html>
+
