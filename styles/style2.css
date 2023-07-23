@@ -8,10 +8,8 @@
 
 body {
     height: 100vh;
-    overflow-x: hidden;
-    background-image: url("../assets/images/pup-background-black_01.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Header starts here */
@@ -25,7 +23,7 @@ header {
 
 /* Header container */
 .header-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 128px;
     width: 100%;
@@ -148,7 +146,7 @@ header ul li a::before {
     bottom: -2px;
     width: 40px;
     height: 2px;
-    background-color: #f0800d;
+    background-color: #F97D01;
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
     transform-origin: right;
@@ -238,12 +236,62 @@ header .search {
     display: none;
 }
 
+/*Department header, contains program name and header background */
+.department-header {
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(190, 107, 23, 0.925) 100%), url("pup-background_03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+/* Contains the content of department header */
+.department-header-container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    padding: 64px 40px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+/* Program title */
+.department-header-container h1{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    text-transform: uppercase;
+}
+
+/* Undergraduate text */
+.department-header h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 24px */
+    text-transform: uppercase;
+}
+
 /* Responsive Design */
 @media (max-width: 1250px) {
+
     .search-btn {
         left: 0;
     }
 
+    /* Display burger menu */
     .menu-toggle {
         position: absolute;
         display: block;
@@ -254,6 +302,7 @@ header .search {
         z-index: 10;
     }
 
+    /* Hides the navigation links */
     header .navbar-item {
         position: absolute;
         opacity: 0;
@@ -261,10 +310,12 @@ header .search {
         left: 100%
     }
 
+    /* Hides the close button while the menu is open */
     .hidden {
         visibility: hidden;
     }
 
+    /* When the navs does not fit anymore */
     header.open .navbar-item {
         height: calc(100vh - 128px);
         width: 100%;
@@ -284,6 +335,7 @@ header .search {
         font-size: 16px;
     }
 
+    /* Display of dropdowns and dropends */
     header.open .navbar-item .dropdown {
         width: 100%;
         top: 0;
@@ -314,6 +366,7 @@ header .search {
         width: auto;
     }
 
+    /* Display of dropdowns and dropends when on focus-within*/
     header ul li:focus-within > .dropdown,
     .dropdown li a:focus-within > .dropend{
         position: relative;
@@ -321,11 +374,8 @@ header .search {
     }
 }
 
-@media (max-width: 700px) {
-    .logo-name {
-        display: none;
-    }
-
+@media (max-width: 720px) {
+    /* Display of dropdowns and dropends */
     header.open .navbar-item li a{
         display: flex;
         justify-content: space-between;
@@ -335,32 +385,601 @@ header .search {
         display: flex;
         justify-content: space-between;
     }
+
+    /* Adjust the height of department header */
+    .department-header {
+        height: 250px;  
+        gap: 4px;
+    }
+    
+    /* Adjust the padding and gap of header container */
+    .department-header-container {
+        gap: 12px;
+        padding-bottom: 36px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 36px;
+    }
+    
+    .department-header h2 {
+        font-size: 20px;
+    }
 }
 
+/* For small screens */
+@media (max-width: 600px) {
+    /* Hides the logo name */
+    .logo-name {
+        display: none;
+    }
+
+    /* Adjust the gap of header texts */
+    .department-header-container {
+        gap: 12px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 28px;
+    }
+    
+    .department-header h2 {
+        font-size: 14px;
+    }
+}
+
+/* For small screens (phone) */
+@media (max-width: 450px) {
+    /* Adjust the height of department header */
+    .department-header {
+        height: 200px;  
+    }
+
+    /* Adjust the padding of container */
+    .department-header-container {
+        gap: 8px;
+        padding-bottom: 30px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 20px;
+    }
+    
+    .department-header h2 {
+        font-size: 12px;
+    }
+}
 /* Header ends here */
 
-/* Sample content starts here */
-
-.hero-section-placeholder {
-    height: 440px;
-    background-image: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
-    background-size: cover;
-    background-position: center;
+/* Directory starts here */
+.directory {
+    height: 66px;
+    background: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.50);
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 160px;
+    box-sizing: border-box;
 }
 
-.dept-title-placeholder {
-    position: absolute;
-    margin: 288px 0 0 168px;
+.directory-contents {
+    display: flex;
+    align-items: center;
 }
+
+.directory-contents p span {
+    color: #B00000;
+    font-weight: bold;
+}
+
+.directory-contents p,
+.directory-contents i {
+    margin: 18.5px 16px;
+}
+
+@media (max-width: 1250px) {
+    .directory {
+        padding-left: 120px;
+    }
+}
+
+@media (max-width: 720px) {
+    .directory {
+        padding-left: 80px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 12px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .directory {
+        padding-left: 60px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 10px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .directory {
+        padding-left: 40px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 8px 6px;
+        font-size: 10px;
+    }
+}
+
+/* Directory ends here */
+
+/* Program section starts here */
+
+/* Section Container (Program Contents and Sidebar Contents)  */
+
+.section-container {
+    margin: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.program-contents {
+    flex: 1;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-contents {
+    flex: 0 0 300px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1250px) {
+    .section-container {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .program-contents, .sidebar-contents {
+        width: 100%;
+    }
+
+    .program-contents {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------------------------------------------------------  */
+
+/* Program Contents */
+
+.program-desc, 
+.specialization-fields, 
+.program-educ-obj,
+.program-outcomes,
+.career-opportunities,
+.admission-requirements,
+.retention-requirements,
+.graduation-requirements {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+    .program-contents .course-title,
+    .program-desc,
+    .specialization-fields,
+    .program-educ-obj,
+    .program-outcomes,
+    .career-opportunities,
+    .admission-requirements,
+    .retention-requirements,
+    .graduation-requirements {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+.career-opportunities li,
+.admission-requirements li,
+.retention-requirements li,
+.graduation-requirements li,
+.program-educ-obj li {
+    margin-left: 24px;
+}
+
+.program-contents .course-title {
+    margin-top: 40px;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 40px;
+    color: #B00000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.program-contents h4 {
+    color: #B00000;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.program-contents p,
+.program-contents li {
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+@media (max-width: 720px) {
+    .program-contents .course-title {
+        font-size: 22px;
+    }
+
+    .program-contents h4 {
+        font-size: 16px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .program-contents .course-title {
+        font-size: 20px;
+    }
+
+    .program-contents h4 {
+        font-size: 15px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-contents .course-title {
+        font-size: 18px;
+    }
+
+    .program-contents h4 {
+        font-size: 14px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 12px;
+    }
+}
+
+/* Program Description starts here */
+
+.content-table {
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin: 16px auto;
+    min-width: 320px;
+    width: 100%;
+}
+
+.content-table thead tr {
+    background-color: #B00000;
+    color: #fff;
+    text-align: left;
+}
+
+.content-table th,
+.content-table td {
+    padding: 10px 12px;
+    font-size: 16px;
+}
+
+.content-table .category {
+    border-radius: 25px 0 0 25px;
+}
+
+.content-table .cred-units {
+    border-radius: 0 25px 25px 0;
+    text-align: center;
+}
+
+.content-table tbody tr {
+    background-color: #f7f7f7;
+}
+
+.content-table tbody tr:last-of-type {
+    background-color: #DF7025;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .program-desc {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .content-table th,
+    .content-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Program Description ends here */
+
+/* Specialization Field starts here */
+
+.specialization-fields .fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.specialization-fields .fields .field {
+    width: 24%;
+    background: #B00000;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.specialization-fields .fields .field i {
+    font-size: 40px;
+}
+
+@media (max-width: 720px) {
+    .specialization-fields .fields .field {
+        width: 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    .specialization-fields .fields .field {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .specialization-fields .fields .field {
+        padding: 8px;
+    }
+}
+
+/* Program Education Objective starts here */
+
+.program-educ-obj ul {
+    padding-left: 20px;
+}
+
+.program-educ-obj li {
+    margin-bottom: 20px;
+}
+
+/* Program Education Objective ends here */
+
+/* Program Outcomes starts here */
+
+.program-outcomes .outcome {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+  
+.program-outcomes .outcome .outcome-num {
+    background: #B00000;
+    color: #fff;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.50);
+}
+  
+.program-outcomes .outcome .outcome-desc {
+    flex: 1;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 720px) {
+    .program-outcomes .outcome .outcome-desc {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-outcomes .outcome .outcome-num {
+        height: 30px;
+        width: 30px;
+    }
+  
+    .program-outcomes .outcome .outcome-desc {
+        padding: 8px 10px;
+    }
+}
+
+/* Program Outcomes ends here */
+
+/* Career Oppurtunities starts here */
+
+.career-opportunities ul {
+    padding-left: 20px;
+}
+
+.career-opportunities li {
+    margin-bottom: 10px;
+}
+
+.career-opportunities p {
+    margin-bottom: 20px;
+}
+
+/* Career Oppurtunities ends here */
+
+/* Admission Requirements starts here */
+
+.admission-requirements ul {
+    padding-left: 20px;
+}
+
+.admission-requirements li {
+    margin-bottom: 10px;
+}
+
+/* Admission Requirements ends here */
+
+/* Retention Requirements starts here */
+
+.retention-requirements ol,
+.retention-requirements ul {
+    padding-left: 20px;
+}
+
+.retention-requirements li {
+    margin-bottom: 10px;
+}
+
+.retention-requirements p {
+    margin-bottom: 20px;
+}
+
+/* Retention Requirements ends here */
+
+/* Graduation Requirements starts here */
+
+.graduation-requirements ol,
+.graduation-requirements ul {
+    padding-left: 20px;
+}
+
+.graduation-requirements li {
+    margin-bottom: 10px;
+}
+
+.graduation-requirements p {
+    margin-bottom: 20px;
+}
+
+/* Graduation Requirements ends here */
+
+/* Sidebar starts here */
+
+.sidebar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+}
+
+.sidebar-title {
+    color: #B00000;
+    padding-top: 12px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.sidebar-item {
+    margin-bottom: 12px;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-item .parent p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.sidebar-item .child p {
+    margin-left: 16px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 720px) {
+    .sidebar-title {
+        font-size: 16px;
+    }
+    
+    .sidebar-item .parent p {
+        font-size: 14px;
+    }
+
+    .sidebar-item .child p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        padding: 0 12px;
+    }
+
+    .sidebar-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 450px) {
+    .sidebar-title {
+        font-size: 12px;
+    }
+
+    .sidebar-item .parent p {
+        font-size: 12px;
+    }
+
+    .sidebar-item .child p {
+        font-size: 11px;
+    }
+}
+
+/* Sidebar ends here */
 
 /* Footer starts here */
 
 /* Footer */
 footer {
     width: 100%;
-    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("pup-background_03.jpg");
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(190, 107, 23, 0.925) 100%), url("pup-background_03.jpg");
     background-size: cover;
     background-position: top;
     font-family: 'Open Sans', sans-serif;
