@@ -362,12 +362,12 @@ header .search {
 .home-panel-3 {
     display: flex;
     width: 100%;
-    height: 18.75rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     background: var(--pup-bg-red-01, linear-gradient(0deg, rgba(128, 0, 0, 0.1) 0%, rgba(128, 0, 0, 0.1) 100%), url('../assets/images/events_break.png'), lightgray 50% / cover no-repeat);
+    padding: 30px;
 }
 
 .home-panel-3 > img:first-child {
@@ -384,6 +384,10 @@ header .search {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     line-height: 180%; /* 4.5rem */
+}
+
+.home-panel-3 > img:first-child {
+    border-radius: 50%;
 }
 /* End of home panel 3 */
 
