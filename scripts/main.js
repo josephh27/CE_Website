@@ -35,6 +35,7 @@ closeBtn.onclick = function() {
 // Show menu on small screens
 menuToggle.onclick = function() {
   header.classList.toggle('open');
+  console.log('okay');
   // Hides search box and close button
   searchBox.classList.remove('active');
   closeBtn.classList.remove('active');
