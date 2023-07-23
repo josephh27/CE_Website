@@ -397,6 +397,7 @@ header .search {
     background-image: url("../assets/images/pup-background-black_01.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .accordion-container {
