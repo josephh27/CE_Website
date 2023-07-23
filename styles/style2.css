@@ -818,7 +818,6 @@ header .search {
 
 @media (max-width: 720px) {
     .program-outcomes .outcome .outcome-desc {
-        flex-basis: 100%;
         margin-bottom: 10px;
     }
 }
