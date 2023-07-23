@@ -1,0 +1,51 @@
+{
+    "ce-button": {
+        "name": "Civil Engineering",
+        "description": "Civil Engineering is a profession that applies the basic principles of science in conjunction with mathematical and computational tools to solve problems associated with developing and sustaining civilized life on our planet. Civil Engineering works are generally one-of-a-kind projects; they are often grand in scale; and they usually require cooperation among professionals of many different disciplines."
+    },
+    "cpe-button": {
+        "name": "Computer Engineering",
+        "description": "Computer Engineering is a four-year degree program that deals with the study of computer systems. The curriculum covers both software and hardware and develops the student's ability to analyze computer systems, designs, construction of electronic equipment and its peripherals"
+    },
+    "ece-button": {
+        "name": "Electronics Engineering",
+        "description": "The Bachelor of Science in Electronics Engineering (BSECE) is a four-year baccalaureate degree in the College of Engineering. The program encourages the complementary pursuits of learning and practice, reflections, and actions along with a sense perspective, adaption and transcendence. The skills that best describes these values incorporate intuition, critical thinking and problem solving as well as abilities with spoken, written, graphic and spatial media."
+    },
+    "ee-button": {
+        "name":"Electrical Engineering",
+        "description":  "The Bachelor of Science in Electrical Engineering program provides combined technical knowledge and skills among students in the field of electricity. The program prepares students for a professional electrical engineering career who will take leading roles in electrical designs, supervision of electrical installation, operation and maintenance of electrical equipments. A strong foundation in basic science and mathematics are needed."
+    },
+    "me-button": {
+        "name": "Mechanical Engineering",
+        "description": "The 2010 revision of the Bachelor of Science in Mechanical Engineering (BSME) Curriculum, embraces the basic areas of design, maintenance, testing, research and development, control and operation of machineries. The undergraduate program offers a solid foundation in science and mathematics and an in-depth understanding of the mechanical engineering technology. Develop the ability to relate to the other disciplines."
+    },
+    "ie-button": {
+        "name": "Industrial Engineering",
+        "description": "The Bachelor of Science in Industrial Engineering (BSIE) is a five-year baccalaureate degree program offered in the College of Engineering (CE). Industrial Engineering as a name is used in industry, commerce, and government maybe the broadcast of all the modern management functions that if consists of all engineering and management control activities that cannot be clearly designated as a part of other engineering or accounting functions."
+    },
+    "re-button": {
+        "name": "Railway Engineering",
+        "description": "This is the Railway Engineering"
+    },
+    "ce-accordion": {
+        "description": "Civil Engineering is a profession that applies the basic principles of science in conjunction with mathematical and computational tools to solve problems associated with developing and sustaining civilized life on our planet. Civil Engineering works are generally one-of-a-kind projects; they are often grand in scale; and they usually require cooperation among professionals of many different disciplines."
+    },
+    "cpe-accordion": {
+        "description": "Computer Engineering is a four-year degree program that deals with the study of computer systems. The curriculum covers both software and hardware and develops the student's ability to analyze computer systems, designs, construction of electronic equipment and its peripherals"
+    },
+    "ece-accordion": {
+        "description": "The Bachelor of Science in Electronics Engineering (BSECE) is a four-year baccalaureate degree in the College of Engineering. The program encourages the complementary pursuits of learning and practice, reflections, and actions along with a sense perspective, adaption and transcendence. The skills that best describes these values incorporate intuition, critical thinking and problem solving as well as abilities with spoken, written, graphic and spatial media."
+    },
+    "ee-accordion": {
+        "description":  "The Bachelor of Science in Electrical Engineering program provides combined technical knowledge and skills among students in the field of electricity. The program prepares students for a professional electrical engineering career who will take leading roles in electrical designs, supervision of electrical installation, operation and maintenance of electrical equipments. A strong foundation in basic science and mathematics are needed."
+    },
+    "me-accordion": {
+        "description": "The 2010 revision of the Bachelor of Science in Mechanical Engineering (BSME) Curriculum, embraces the basic areas of design, maintenance, testing, research and development, control and operation of machineries. The undergraduate program offers a solid foundation in science and mathematics and an in-depth understanding of the mechanical engineering technology. Develop the ability to relate to the other disciplines."
+    },
+    "ie-accordion": {
+        "description": "The Bachelor of Science in Industrial Engineering (BSIE) is a five-year baccalaureate degree program offered in the College of Engineering (CE). Industrial Engineering as a name is used in industry, commerce, and government maybe the broadcast of all the modern management functions that if consists of all engineering and management control activities that cannot be clearly designated as a part of other engineering or accounting functions."
+    },
+    "re-accordion": {
+        "description": "This is the Railway Engineering"
+    }
+}

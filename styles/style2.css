@@ -1,0 +1,1188 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header starts here */
+
+/* Header */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Header container */
+.header-container {
+    position: absolute;
+    top: 0;
+    height: 128px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Logo part */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo.hidden {
+    visibility: hidden;
+}
+
+.logo img {
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.logo-name {
+    line-height: 20px;
+    font-size: 16px;
+}
+
+/* Nav and search */
+.header-items {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation */
+header ul {
+    position: relative;
+    display: flex;
+    gap: 32px;
+}
+
+/* Nav elements */
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+header ul li a i {
+    padding-left: 6px;
+}
+
+/* Nav dropdown & dropend */
+
+header ul li .dropdown {
+    min-width: 200px;
+    top: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+}
+
+.dropdown li .dropend {
+    top: 0;
+    right: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+}
+
+.dropdown li  a{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Set width*/
+.dropend.about {
+    width: 180px;
+}
+
+.dropend.acad {
+    width: 420px;
+}
+
+.dropdown.students {
+    width: 300px;
+}
+
+/* Show dropdown and dropend */
+header ul li:focus-within > ul,
+.dropdown li:focus-within > .dropend{
+    display: flex;
+}
+
+/* Line beneath navs*/
+header ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 40px;
+    height: 2px;
+    background-color: #F97D01;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+    z-index: 1;
+}
+
+/* Show line on hover*/
+header ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Search div*/
+header .search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    z-index: 1000;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Max length and hides nav */
+.search-box {
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Show seach bar */
+.search-box.active {
+    right: 0;
+    display: flex;
+}
+
+/* Search input box */
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    background: #000;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Search button */
+.search-btn {
+    position: relative;
+    left: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Hides search button */
+.search-btn.active {
+    left: 0;
+}
+
+/* Close button */
+.close-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    scale: 0;
+}
+
+/* Show close button */
+.close-btn.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+    scale: 1;
+}
+
+/* Menu button */
+.menu-toggle {
+    position: relative;
+    display: none;
+}
+
+/*Department header, contains program name and header background */
+.department-header {
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(190, 107, 23, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+/* Contains the content of department header */
+.department-header-container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    padding: 64px 40px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+/* Program title */
+.department-header-container h1{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    text-transform: uppercase;
+}
+
+/* Undergraduate text */
+.department-header h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 24px */
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 1250px) {
+
+    .search-btn {
+        left: 0;
+    }
+
+    /* Display burger menu */
+    .menu-toggle {
+        position: absolute;
+        display: block;
+        font-size: 23px;
+        cursor: pointer;
+        color: #fff;
+        transform: translateX(30px);
+        z-index: 10;
+    }
+
+    /* Hides the navigation links */
+    header .navbar-item {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%
+    }
+
+    /* Hides the close button while the menu is open */
+    .hidden {
+        visibility: hidden;
+    }
+
+    /* When the navs does not fit anymore */
+    header.open .navbar-item {
+        height: calc(100vh - 128px);
+        width: 100%;
+        top: 128px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #000;
+        padding: 16px 48px;
+        gap: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    header.open .navbar-item li a{
+        font-size: 16px;
+    }
+
+    /* Display of dropdowns and dropends */
+    header.open .navbar-item .dropdown {
+        width: 100%;
+        top: 0;
+        flex-direction: column;
+        padding: 0;
+        padding-top: 16px;
+        padding-left: 20px;
+    }
+
+    header.open .navbar-item .dropdown li{
+        display: block;
+    }
+
+    header.open .navbar-item .dropdown li  a{
+        display: block;
+    }
+
+    header.open .navbar-item .dropdown li .dropend{
+        width: 100%;
+        right: 0;
+        position: relative;
+        padding: 0;
+        padding-top: 16px;
+        padding-left: 20px;
+    }
+
+    .dropend li {
+        width: auto;
+    }
+
+    /* Display of dropdowns and dropends when on focus-within*/
+    header ul li:focus-within > .dropdown,
+    .dropdown li a:focus-within > .dropend{
+        position: relative;
+        display: flex;
+    }
+}
+
+@media (max-width: 720px) {
+    /* Display of dropdowns and dropends */
+    header.open .navbar-item li a{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header.open .navbar-item .dropdown li  a{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Adjust the height of department header */
+    .department-header {
+        height: 250px;  
+        gap: 4px;
+    }
+    
+    /* Adjust the padding and gap of header container */
+    .department-header-container {
+        gap: 12px;
+        padding-bottom: 36px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 36px;
+    }
+    
+    .department-header h2 {
+        font-size: 20px;
+    }
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+    /* Hides the logo name */
+    .logo-name {
+        display: none;
+    }
+
+    /* Adjust the gap of header texts */
+    .department-header-container {
+        gap: 12px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 28px;
+    }
+    
+    .department-header h2 {
+        font-size: 14px;
+    }
+}
+
+/* For small screens (phone) */
+@media (max-width: 450px) {
+    /* Adjust the height of department header */
+    .department-header {
+        height: 200px;  
+    }
+
+    /* Adjust the padding of container */
+    .department-header-container {
+        gap: 8px;
+        padding-bottom: 30px;
+    }
+    
+    /* Adjust font-size of headers */
+    .department-header-container h1{
+        font-size: 20px;
+    }
+    
+    .department-header h2 {
+        font-size: 12px;
+    }
+}
+/* Header ends here */
+
+/* Directory starts here */
+.directory {
+    height: 66px;
+    background: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.50);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 160px;
+    box-sizing: border-box;
+}
+
+.directory-contents {
+    display: flex;
+    align-items: center;
+}
+
+.directory-contents p span {
+    color: #B00000;
+    font-weight: bold;
+}
+
+.directory-contents p,
+.directory-contents i {
+    margin: 18.5px 16px;
+}
+
+@media (max-width: 1250px) {
+    .directory {
+        padding-left: 120px;
+    }
+}
+
+@media (max-width: 720px) {
+    .directory {
+        padding-left: 80px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 12px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .directory {
+        padding-left: 60px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 10px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .directory {
+        padding-left: 40px;
+    }
+
+    .directory-contents p,
+    .directory-contents i {
+        margin: 8px 6px;
+        font-size: 10px;
+    }
+}
+
+/* Directory ends here */
+
+/* Program section starts here */
+
+/* Section Container (Program Contents and Sidebar Contents)  */
+
+.section-container {
+    margin: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.program-contents {
+    flex: 1;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-contents {
+    flex: 0 0 300px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1250px) {
+    .section-container {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .program-contents, .sidebar-contents {
+        width: 100%;
+    }
+
+    .program-contents {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------------------------------------------------------  */
+
+/* Program Contents */
+
+.program-desc, 
+.specialization-fields, 
+.program-educ-obj,
+.program-outcomes,
+.career-opportunities,
+.admission-requirements,
+.retention-requirements,
+.graduation-requirements {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+    .program-contents .course-title,
+    .program-desc,
+    .specialization-fields,
+    .program-educ-obj,
+    .program-outcomes,
+    .career-opportunities,
+    .admission-requirements,
+    .retention-requirements,
+    .graduation-requirements {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+.career-opportunities li,
+.admission-requirements li,
+.retention-requirements li,
+.graduation-requirements li,
+.program-educ-obj li {
+    margin-left: 24px;
+}
+
+.program-contents .course-title {
+    margin-top: 40px;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 40px;
+    color: #B00000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.program-contents h4 {
+    color: #B00000;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.program-contents p,
+.program-contents li {
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+@media (max-width: 720px) {
+    .program-contents .course-title {
+        font-size: 22px;
+    }
+
+    .program-contents h4 {
+        font-size: 16px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .program-contents .course-title {
+        font-size: 20px;
+    }
+
+    .program-contents h4 {
+        font-size: 15px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-contents .course-title {
+        font-size: 18px;
+    }
+
+    .program-contents h4 {
+        font-size: 14px;
+    }
+
+    .program-contents p,
+    .program-contents li {
+        font-size: 12px;
+    }
+}
+
+/* Program Description starts here */
+
+.content-table {
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin: 16px auto;
+    min-width: 320px;
+    width: 100%;
+}
+
+.content-table thead tr {
+    background-color: #B00000;
+    color: #fff;
+    text-align: left;
+}
+
+.content-table th,
+.content-table td {
+    padding: 10px 12px;
+    font-size: 16px;
+}
+
+.content-table .category {
+    border-radius: 25px 0 0 25px;
+}
+
+.content-table .cred-units {
+    border-radius: 0 25px 25px 0;
+    text-align: center;
+}
+
+.content-table tbody tr {
+    background-color: #f7f7f7;
+}
+
+.content-table tbody tr:last-of-type {
+    background-color: #DF7025;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .program-desc {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .content-table th,
+    .content-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Program Description ends here */
+
+/* Specialization Field starts here */
+
+.specialization-fields .fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.specialization-fields .fields .field {
+    width: 24%;
+    background: #B00000;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.specialization-fields .fields .field i {
+    font-size: 40px;
+}
+
+@media (max-width: 720px) {
+    .specialization-fields .fields .field {
+        width: 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    .specialization-fields .fields .field {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .specialization-fields .fields .field {
+        padding: 8px;
+    }
+}
+
+/* Program Education Objective starts here */
+
+.program-educ-obj ul {
+    padding-left: 20px;
+}
+
+.program-educ-obj li {
+    margin-bottom: 20px;
+}
+
+/* Program Education Objective ends here */
+
+/* Program Outcomes starts here */
+
+.program-outcomes .outcome {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+  
+.program-outcomes .outcome .outcome-num {
+    background: #B00000;
+    color: #fff;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.50);
+}
+  
+.program-outcomes .outcome .outcome-desc {
+    flex: 1;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 720px) {
+    .program-outcomes .outcome .outcome-desc {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-outcomes .outcome .outcome-num {
+        height: 30px;
+        width: 30px;
+    }
+  
+    .program-outcomes .outcome .outcome-desc {
+        padding: 8px 10px;
+    }
+}
+
+/* Program Outcomes ends here */
+
+/* Career Oppurtunities starts here */
+
+.career-opportunities ul {
+    padding-left: 20px;
+}
+
+.career-opportunities li {
+    margin-bottom: 10px;
+}
+
+.career-opportunities p {
+    margin-bottom: 20px;
+}
+
+/* Career Oppurtunities ends here */
+
+/* Admission Requirements starts here */
+
+.admission-requirements ul {
+    padding-left: 20px;
+}
+
+.admission-requirements li {
+    margin-bottom: 10px;
+}
+
+/* Admission Requirements ends here */
+
+/* Retention Requirements starts here */
+
+.retention-requirements ol,
+.retention-requirements ul {
+    padding-left: 20px;
+}
+
+.retention-requirements li {
+    margin-bottom: 10px;
+}
+
+.retention-requirements p {
+    margin-bottom: 20px;
+}
+
+/* Retention Requirements ends here */
+
+/* Graduation Requirements starts here */
+
+.graduation-requirements ol,
+.graduation-requirements ul {
+    padding-left: 20px;
+}
+
+.graduation-requirements li {
+    margin-bottom: 10px;
+}
+
+.graduation-requirements p {
+    margin-bottom: 20px;
+}
+
+/* Graduation Requirements ends here */
+
+/* Sidebar starts here */
+
+.sidebar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+}
+
+.sidebar-title {
+    color: #B00000;
+    padding-top: 12px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.sidebar-item {
+    margin-bottom: 12px;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-item .parent p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.sidebar-item .child p {
+    margin-left: 16px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 720px) {
+    .sidebar-title {
+        font-size: 16px;
+    }
+    
+    .sidebar-item .parent p {
+        font-size: 14px;
+    }
+
+    .sidebar-item .child p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        padding: 0 12px;
+    }
+
+    .sidebar-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 450px) {
+    .sidebar-title {
+        font-size: 12px;
+    }
+
+    .sidebar-item .parent p {
+        font-size: 12px;
+    }
+
+    .sidebar-item .child p {
+        font-size: 11px;
+    }
+}
+
+/* Sidebar ends here */
+
+/* Footer starts here */
+
+/* Footer */
+footer {
+    width: 100%;
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
+    background-size: cover;
+    background-position: top;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+/* Contains the elements within the footer */
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+/* Logo */
+footer .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Hides the other logo-name for small screens */
+.outside {
+    display: none;
+}
+
+/* Adjust logo img size */
+footer .logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Modify logo name */
+footer .logo-name {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer .logo-name b {
+    color: #F97D01;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Social links container */
+.social-links {
+    width: 100%;
+    display: flex;
+    padding: 16px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Social icons container */
+.icon-links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/* Social icons */ 
+.icon-links a i{
+    text-decoration: none;
+    color: #F97D01;
+    font-size: 24px;
+}
+
+/* Line divider */ 
+.divider {
+    width: 90%;
+    min-width: 300px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+/* quick links container */
+.quick-links{
+    display: flex;
+    padding: 16px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/* website links container */
+.quick-links .website-links {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* website links */
+.quick-links .website-links li a{
+    text-transform: none;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* website links divider */
+.website-links .divider-circle{
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+/* about links container */
+.quick-links .about-links {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* about links */
+.quick-links .about-links li a {
+    text-transform: none;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* about links divider */
+.about-links .divider-v{
+    height: 24px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+/* Hover effect for links */
+.icon-links a i:hover, .icon-links a i:active {
+    color: #fff;
+} 
+
+.about-links li a:hover, .about-links li a:active, .website-links li a:hover, .website-links li a:active {
+    color: #F97D01;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+    /* Hides the logo name between logo images */
+    .within {
+        display: none;
+    }
+
+    /* Show the logo name beneath logo images */
+    .outside {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Adjust the sizes of footer elements to fit the screen better */
+    footer .logo {
+        gap: 12px;
+    }
+
+    footer .logo img {
+        height: 60px;
+        width: 60px;
+    }
+
+    footer .logo-name {
+        font-size: 12px;
+    }
+
+    footer .logo-name b{
+        font-size: 11px;
+    }
+
+    footer .icon-links {
+        gap: 25px;
+    }
+
+    footer .social-links {
+        font-size: 16px;
+    }
+
+    /* Footer ends here */
+}
