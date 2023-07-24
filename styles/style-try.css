@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #161616;
+    --red: #B00000;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Styles for Directory */
+
+.directory {
+    height: 66px;
+    background: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.50);
+    display: flex;
+    align-items: center;
+}
+
+.directory-contents {
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+}
+
+.directory-contents p span {
+    color: #B00000;
+    font-weight: bold;
+}
+
+.directory-contents p,
+.directory-contents i {
+    font-size: 15px;
+    padding-right: 16px;
+}
+
+/* Responsive Style for Directory */
+
+@media (max-width: 720px) {
+    .directory {
+        height: 60px;
+    }
+    
+    .directory-contents {
+        padding-left: 140px;
+    }
+    
+    .directory-contents p,
+    .directory-contents i {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .directory {
+        height: 54px;
+    }
+    
+    .directory-contents {
+        padding-left: 100px;
+    }
+    
+    .directory-contents p,
+    .directory-contents i {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 450px) {
+    .directory {
+        height: 48px;
+    }
+    
+    .directory-contents {
+        padding-left: 60px;
+    }
+    
+    .directory-contents p,
+    .directory-contents i {
+        font-size: 9px;
+    }
+}
+
+/* Styles for section container */
+
+/* Sets display, gap, and margin for the container */
+.section-container {
+    display: flex;
+    gap: 16px;
+    margin: 0 160px;
+    justify-content: center;
+}
+
+/* Set the font size/weight and color for h2s */
+.section-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--red);
+}
+
+/* Set the font size/weight and color for h3s */
+.section-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--red);
+}
+
+/* Set the font size/weight and color for h4s */
+.section-container h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--red);
+}
+
+/* Set the font size, line height and color for p */
+.section-container p {
+    font-size: 15px;
+    margin: 16px 0;
+    line-height: 200%;
+    color: var(--black);
+}
+
+/* Set the font size, line height and color for li */
+.section-container li {
+    line-height: 200%;
+    font-size: 15px;
+    color: var(--black);
+}
+
+/* Sets the color and remove text decor for a */
+.section-container a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.section-container th,
+.section-container td {
+    font-size: 15px;
+}
+
+/* Responsive Style for Section Container */
+
+@media (max-width: 720px) {
+    .section-container {
+        margin: 0 120px;
+        flex-wrap: wrap;
+    }
+
+    .section-container h2 {
+        font-size: 22px;
+    }
+
+    .section-container h3 {
+        font-size: 16px;
+    }
+
+    .section-container h4 {
+        font-size: 14px;
+    }
+
+    .section-container p {
+        font-size: 13px;
+        margin: 14px 0;
+        line-height: 180%;
+    }
+
+    .section-container li {
+        font-size: 13px;
+        line-height: 180%;
+    }
+
+    .section-container th,
+    .section-container td {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .section-container {
+        margin: 0 80px;
+    }
+
+    .section-container h2 {
+        font-size: 20px;
+    }
+
+    .section-container h3 {
+        font-size: 14px;
+    }
+
+    .section-container h4 {
+        font-size: 12px;
+    }
+
+    .section-container p {
+        font-size: 11px;
+        margin: 12px 0;
+        line-height: 160%;
+    }
+
+    .section-container li {
+        font-size: 11px;
+        line-height: 160%;
+    }
+
+    .section-container th,
+    .section-container td {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 450px) {
+    .section-container {
+        margin: 0 40px;
+    }
+
+    .section-container h2 {
+        font-size: 18px;
+    }
+
+    .section-container h3 {
+        font-size: 12px;
+    }
+
+    .section-container h4 {
+        font-size: 10px;
+    }
+
+    .section-container p {
+        font-size: 9px;
+        margin: 10px 0;
+        line-height: 140%;
+    }
+
+    .section-container li {
+        font-size: 9px;
+        line-height: 140%;
+    }
+
+    .section-container th,
+    .section-container td {
+        font-size: 9px;
+    }
+}
+
+/* Styles for Section Container */
+
+/* Styles for Program Contents */
+
+/* Sets the width and padding for the program contents */
+.program-contents {
+    width: 884px;
+    padding: 0 24px;
+}
+
+/* Sets the margin for the divs inside program contents */
+.program-contents div {
+    margin: 40px 0;
+}
+
+.program-contents li {
+    margin-left: 24px;
+}
+
+.program-contents .course-title {
+    margin-top: 40px;
+}
+
+/* Responsive Style for Program Contents */
+
+@media (max-width: 720px) {
+    .program-contents {
+        padding: 0 20px;
+    }
+
+    .program-contents div {
+        margin: 30px 0;
+    }
+
+    .program-contents li {
+        margin-left: 22px;
+    }
+
+    .program-contents .course-title {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .program-contents {
+        padding: 0 15px;
+    }
+
+    .program-contents div {
+        margin: 20px 0;
+    }
+
+    .program-contents li {
+        margin-left: 20px;
+    }
+
+    .program-contents .course-title {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-contents {
+        padding: 0 10px;
+    }
+
+    .program-contents div {
+        margin: 10px 0;
+    }
+
+    .program-contents li {
+        margin-left: 18px;
+    }
+
+    .program-contents .course-title {
+        margin-top: 25px;
+    }
+}
+
+/* Styles for the Specialization Fields of Program Description */
+
+.program-description .fields {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+}
+
+.program-description .fields .field {
+    text-align: center;
+    padding: 12px;
+    background: var(--red);
+    border-radius: 10px;
+    height: 100%;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.program-description .fields .field i,
+.program-description .fields .field p {
+    color: var(--white);
+}
+
+.program-description .fields .field i {
+    font-size: 40px;
+}
+
+/* Responsive Styles for Specialization Fields */
+
+@media (max-width: 1250px) {
+    .program-description .fields .field {
+        width: 45%;
+    }
+
+    .program-description .fields .field i {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 720px) {
+    .program-description .fields .field {
+        width: 45%;
+    }
+
+    .program-description .fields .field i {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .program-description .fields {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .program-description .fields .field {
+        height: 90px;
+        margin-bottom: 2px; 
+    }
+
+    .program-description .fields .field i {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-description .fields .field i {
+        font-size: 20px;
+    }
+}
+
+/* Styles for Curriculum Structure Table of Program Description */
+
+.content-table {
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin: 16px auto;
+    width: 100%;
+}
+
+.content-table thead tr {
+    background-color: #B00000;
+    color: #fff;
+    text-align: left;
+}
+
+.content-table th,
+.content-table td {
+    padding: 10px 12px;
+}
+
+.content-table .category {
+    border-radius: 25px 0 0 25px;
+}
+
+.content-table .cred-units {
+    border-radius: 0 25px 25px 0;
+    text-align: center;
+}
+
+.content-table tbody tr {
+    background-color: #f7f7f7;
+}
+
+.content-table tbody tr:last-of-type {
+    background-color: #DF7025;
+    font-weight: bold;
+}
+
+/* Responsive Style for Curriculum Structure Table of Program Description */
+
+@media (max-width: 720px) {
+    .content-table {
+        border-spacing: 0 2px;
+        margin: 14px auto;
+    }
+    
+    .content-table th,
+    .content-table td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-table {
+        margin: 12px auto;
+    }
+    
+    .content-table th,
+    .content-table td {
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .content-table {
+        margin: 10px auto;
+    }
+    
+    .content-table th,
+    .content-table td {
+        padding: 4px 6px;
+    }
+}
+
+/* Styles for the Program Outcomes */
+
+.program-output-outcomes .outcome {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    align-items: center;
+}
+  
+.program-output-outcomes .outcome .outcome-num {
+    background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.50);
+}
+  
+.program-output-outcomes .outcome .outcome-desc {
+    flex: 1;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 10px 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.50);
+}
+
+/* Responsive Style for Program Output and Outcomes */
+
+@media (max-width: 720px) {
+    .program-output-outcomes .outcome .outcome-num {
+        height: 30px;
+        width: 30px;
+    }
+      
+    .program-output-outcomes .outcome .outcome-desc {
+        padding: 9px 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    .program-output-outcomes .outcome .outcome-num {
+        height: 27px;
+        width: 27px;
+    }
+      
+    .program-output-outcomes .outcome .outcome-desc {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .program-output-outcomes .outcome .outcome-num {
+        height: 24px;
+        width: 24px;
+    }
+      
+    .program-output-outcomes .outcome .outcome-desc {
+        padding: 7px 9px;
+    }
+}
+
+/* Styles for Sidebar Contents */
+
+/* Sets the width and padding for the sidebar contents */
+.sidebar-contents {
+    width: 300px;
+    padding: 40px 16px;
+}
+
+/* Remove the list style for the sidebar contents li */
+.sidebar-contents li {
+    list-style: none;
+}
+
+/* Sets the margin for the sidebar */
+.sidebar {
+    margin: 24px 0;
+}
+
+/* Sets the margin for the sidebar title */
+.sidebar-title {
+    margin: 16px 0;
+}
+
+/* Sets the padding for child inside the sidebar-item */
+.sidebar-item .child {
+    padding: 0 16px;
+}
+
+/* Responsive Style for Sidebar */
+
+@media (max-width: 720px) {
+    .sidebar-contents {
+        width: 100%;
+        background: #fdfdfd;
+        display: flex;
+        padding: 20px;
+    }
+
+    .sidebar {
+        margin: 10px 0;
+    }
+
+    .sidebar-title {
+        margin: 10px 0;
+    }
+
+    .sidebar-item .child {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar-contents {
+        padding: 18px;
+    }
+
+    .sidebar {
+        margin: 8px 0;
+    }
+
+    .sidebar-title {
+        margin: 8px 0;
+    }
+
+    .sidebar-item .child {
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .sidebar-contents {
+        padding: 15px;
+    }
+
+    .sidebar {
+        margin: 6px 0;
+    }
+
+    .sidebar-title {
+        margin: 6px 0;
+    }
+
+    .sidebar-item .child {
+        padding: 0 6px;
+    }
+}
