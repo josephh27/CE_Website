@@ -199,7 +199,7 @@ header ul li .dropdown {
     justify-content: space-between;
 }
 
-.dropdown > li {
+.dropdown > li, .dropend > li {
 	position: relative;
 }
 
@@ -214,7 +214,10 @@ header ul li .dropdown {
 .dropend {
 	margin-top: -15px;
 	margin-right: 15px;
-    width: 420px;
+}
+
+.dropend.acad {
+	width: 420px;
 }
 
 .dropdown.students {
