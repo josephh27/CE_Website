@@ -441,10 +441,6 @@ header .search {
         padding-left: 20px;
     }
 
-    .dropend li {
-        width: auto;
-    }
-
     /* Display of dropdowns and dropends when on focus-within*/
     header ul li:focus-within > .dropdown,
     .dropdown li a:focus-within > .dropend{
