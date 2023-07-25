@@ -180,7 +180,7 @@ header ul li .dropdown {
     justify-content: space-between;
 }
 
-.dropdown > li {
+.dropdown > li, .dropend > li {
 	position: relative;
 }
 
