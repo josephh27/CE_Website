@@ -194,7 +194,7 @@ header ul li .dropdown {
     font-size: 14px;
 }
 
-.dropdown li  a{
+.dropdown li a{
     display: flex;
     justify-content: space-between;
 }
@@ -213,6 +213,7 @@ header ul li .dropdown {
 
 .dropend {
 	margin-top: -15px;
+	margin-right: 15px;
     width: 420px;
 }
 
@@ -334,6 +335,7 @@ header .search {
 
 	.dropend {
 		margin-top: 0;
+		margin-right: 0;
 	}
 
     /* Display burger menu */
