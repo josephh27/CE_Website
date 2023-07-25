@@ -1214,6 +1214,17 @@ footer .logo-name b {
 	color: var(--clr-white) !important;
 	background-color: var(--clr-white) !important;
 }
+
+@media screen and (max-width: 800px) {
+	.announcement-container {
+		flex-direction: column;
+	}
+
+	.text-container {
+		align-items: center;
+		text-align: center;
+	}
+}
 /* End of home panel 1  */
 
 /* Start of home panel 2 */
