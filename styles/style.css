@@ -310,8 +310,9 @@ header .search {
     display: none;
 }
 
+
 /* Responsive Design */
-@media (max-width: 1260px) {
+@media screen and (max-width: 1260px) {
     .search-btn {
         left: 0;
     }
@@ -409,7 +410,7 @@ header .search {
     }
 }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
     /* Adjust the height of header */
     header {
         height: 100px;
