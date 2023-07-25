@@ -41,6 +41,13 @@
 	padding: 0;
 }
 
+.body-wrapper {
+	position: relative;
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
+}
+
 body {
 	font-family: "Open Sans", sans-serif;
 	overflow-x: hidden;
@@ -192,12 +199,17 @@ header ul li .dropdown {
     justify-content: space-between;
 }
 
+.dropdown > li {
+	position: relative;
+}
+
 /* Set width*/
 .dropend.about {
     width: 180px;
 }
 
-.dropend.acad {
+.dropend {
+	margin-top: -15px;
     width: 420px;
 }
 
@@ -317,6 +329,10 @@ header .search {
         left: 0;
     }
 
+	.dropend {
+		margin-top: 0;
+	}
+
     /* Display burger menu */
     .menu-toggle {
         position: absolute;
@@ -330,6 +346,7 @@ header .search {
 
     /* Hides the navigation links */
     header .navbar-item {
+		display: hidden;
         position: absolute;
         opacity: 0;
         visibility: hidden;
@@ -1007,7 +1024,7 @@ footer .logo-name b {
 }
 
 /* Responsive design */
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
     /* Hides the logo name between logo images */
     .within {
         display: none;
@@ -1019,7 +1036,7 @@ footer .logo-name b {
     }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     /* Adjust the sizes of footer elements to fit the screen better */
     footer .logo {
         gap: 12px;
@@ -1106,6 +1123,7 @@ footer .logo-name b {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	overflow-x: hidden;
 }
 
 .announcement-container {
@@ -1241,6 +1259,49 @@ footer .logo-name b {
 	text-align: center;
 	justify-content: start;
 	gap: 24px;
+}
+
+/* Home panel 2 responsive design */
+@media (max-width: 700px) {
+	.intro-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.home-panel-2 .header-1 {
+		font-size: var(--fs-header-02);
+	}
+
+	.home-panel-2 .text-large {
+		font-size: var(--fs-regular);
+	}
+
+	.mission-vision {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 40px;
+	}
+}
+
+@media (max-width: 550px) {
+	.intro-container > * {
+		padding-inline: 0px;
+		padding-block: 24px;
+	}
+}
+
+@media (max-width: 400px) {
+	.intro-container {
+		padding-inline: 24px;
+	}
+
+	.home-panel-2 .header-1 {
+		font-size: var(--fs-header-03);
+	}
+
+	.home-panel-2 .text-large {
+		font-size: var(--fs-regular);
+	}
 }
 /* End of home panel 2 */
 

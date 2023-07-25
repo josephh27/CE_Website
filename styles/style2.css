@@ -46,6 +46,13 @@ body {
 	overflow-x: hidden;
 }
 
+.body-wrapper {
+	position: relative;
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
+}
+
 .main-section-container {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -363,6 +370,7 @@ header .search {
 
     /* Hides the navigation links */
     header .navbar-item {
+		display: none;
         position: absolute;
         opacity: 0;
         visibility: hidden;
