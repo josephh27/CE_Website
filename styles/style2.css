@@ -180,9 +180,18 @@ header ul li .dropdown {
     justify-content: space-between;
 }
 
+.dropdown > li {
+	position: relative;
+}
+
 /* Set width*/
 .dropend.about {
     width: 180px;
+}
+
+.dropend {
+	margin-top: -15px;
+	margin-right: 15px;
 }
 
 .dropend.acad {
@@ -356,6 +365,11 @@ header .search {
     .search-btn {
         left: 0;
     }
+
+	.dropend {
+		margin-top: 0;
+		margin-right: 0;
+	}
 
     /* Display burger menu */
     .menu-toggle {
