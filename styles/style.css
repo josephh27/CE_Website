@@ -203,6 +203,9 @@ header ul li .dropdown {
 	position: relative;
 }
 
+.dropend li {
+	width: 100%;
+}
 /* Set width*/
 .dropend.about {
     width: 180px;
@@ -413,10 +416,6 @@ header .search {
         padding: 0;
         padding-top: 16px;
         padding-left: 20px;
-    }
-
-    .dropend li {
-        width: auto;
     }
 
     /* Display of dropdowns and dropends when on focus-within*/
