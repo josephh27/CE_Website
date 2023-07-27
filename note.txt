@@ -1,0 +1,8 @@
+additionals to program contents
+- removed some min-width property
+
+@media (max-width: 500px) {
+	.directory-contents {
+		padding: 20px;
+	}
+}
