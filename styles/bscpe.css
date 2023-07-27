@@ -67,24 +67,28 @@ body {
 
 /* Header */
 header {
-	width: 100%;
-	display: flex;
-	justify-content: center;
 	z-index: 99;
+    height: 128px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
 }
 
 /* Header container */
 .header-container {
-	position: absolute;
-	top: 0;
-	height: 128px;
-	width: 100%;
-	max-width: 1280px;
-	padding: 24px 40px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-family: "Open Sans", sans-serif;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    max-width: 1280px;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Logo part */
@@ -175,7 +179,7 @@ header ul li .dropdown {
     font-size: 14px;
 }
 
-.dropdown li  a{
+.dropdown li a{
     display: flex;
     justify-content: space-between;
 }
@@ -184,6 +188,9 @@ header ul li .dropdown {
 	position: relative;
 }
 
+.dropend li {
+	width: 100%;
+}
 /* Set width*/
 .dropend.about {
     width: 180px;
@@ -195,7 +202,7 @@ header ul li .dropdown {
 }
 
 .dropend.acad {
-    width: 420px;
+	width: 420px;
 }
 
 .dropdown.students {
@@ -362,7 +369,7 @@ header .search {
 
 /* Responsive Design */
 @media (max-width: 1260px) {
-    .search-btn {
+	.search-btn {
         left: 0;
     }
 
@@ -384,13 +391,11 @@ header .search {
 
     /* Hides the navigation links */
     header .navbar-item {
-		display: none;
+		display: hidden;
         position: absolute;
         opacity: 0;
         visibility: hidden;
         left: 100%;
-		z-index: 1000;
-		height: 100vh;
     }
 
     /* Hides the close button while the menu is open */
@@ -465,7 +470,7 @@ header .search {
 
 @media screen and (max-width: 720px) {
 	 /* Adjust the height of header */
-	 .header-container {
+	 header {
         height: 100px;
     }
 
