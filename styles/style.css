@@ -590,7 +590,14 @@ header .search {
 	transition: all 0.2s ease-in;
 }
 
-.department-button:hover {
+.department-button a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+
+.department-button:hover a {
 	color: #f97d01;
 }
 
