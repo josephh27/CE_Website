@@ -41,8 +41,6 @@ menuToggle.onclick = function() {
 // Header ends here 
 
 // Fetch current data 
-// const guideContentIds = ['programDesc', 'curriculumDesc1', 'curriculumDesc2', 'curriculumDesc3', 'specializationFields1',
-//   'specializationFields2', 'programEducationalObjectives'];
 const docRef = doc(firestoreDb, "College Of Engineering", "bscpe");
 const docSnap = await getDoc(docRef);
 const data = docSnap.data();
@@ -65,27 +63,37 @@ Object.keys(dataPEO).forEach((id) => {
   }
 })
 // Putting in a list so it can be sorted
-
+let latestIndex = 0;
 peoList.sort();
 peoList.forEach((id, index) => {
+  latestIndex += 1;
   const listItem = document.createElement('li');
   listItem.classList.add('peoListItem')
   listItem.id = id;
+
   // Create caption textarea
   const captionTextArea = document.createElement('textarea');
   captionTextArea.setAttribute('cols', 30);
   captionTextArea.setAttribute('rows', 1);
-  captionTextArea.id = `peoListItemCapt${index}` 
+  captionTextArea.id = `peoListItemCapt${index+1}` 
+
   // Create description textarea
   const descriptionTextArea = document.createElement('textarea');
   descriptionTextArea.setAttribute('cols', 30);
   descriptionTextArea.setAttribute('rows', 10);
-  descriptionTextArea.id = `peoListItemDesc${index}` 
+  descriptionTextArea.id = `peoListItemDesc${index+1}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE PROGRAM EDUCATIONAL OBJECTIVE';
+  removeButton.classList.add('remove-peo-button');
+
   // Setting values
   captionTextArea.textContent = dataPEO[id].peoCapt;
   descriptionTextArea.textContent = dataPEO[id].peoDesc;
   listItem.appendChild(captionTextArea);
   listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
   programEducationalObjectivesList.appendChild(listItem);
 })
 // End of Program Educational Objectives List
@@ -116,15 +124,17 @@ bscpeForm.addEventListener('submit', (e) => {
       }).catch(err => {
         console.log(err.message);
     });
-
+    removePeoItems();
     // Setting Program Educational Objectives list items
     const newDocPEO = {};
-    Object.keys(dataPEO).forEach((key, index) => {
-      newDocPEO[key] = 
-      {
-        peoCapt: bscpeForm['peoListItemCapt' + index].value.trim(),
-        peoDesc: bscpeForm['peoListItemDesc' + index].value.trim()
-      }
+    peoList.sort();
+    console.log(peoList);
+    peoList.forEach((key, index) => {
+    newDocPEO[key] = 
+    {
+      peoCapt: bscpeForm['peoListItemCapt' + (index+1).toString()].value.trim(),
+      peoDesc: bscpeForm['peoListItemDesc' + (index+1).toString()].value.trim()
+    }
     })
     setDoc(doc(firestoreDb, "College Of Engineering", "bscpePEO"), 
           newDocPEO).then(() => {
@@ -132,5 +142,70 @@ bscpeForm.addEventListener('submit', (e) => {
       }).catch(err => {
         console.log(err.message);
     });
+    alert('Saved Changes Successfully!');
 })
 
+// Add another Program Educational Objective
+const addPeoButton = document.querySelector('#add-peo-button');
+addPeoButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const latestIndex = peoList.length + 1;
+  const listItem = document.createElement('li');
+  listItem.classList.add('peoListItem')
+  listItem.id = 'peoListItemCapt' + (latestIndex).toString();
+  // Create caption textarea
+  const captionTextArea = document.createElement('textarea');
+  captionTextArea.setAttribute('cols', 30);
+  captionTextArea.setAttribute('rows', 1);
+  captionTextArea.id = `peoListItemCapt${latestIndex}` 
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 10);
+  descriptionTextArea.id = `peoListItemDesc${latestIndex}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE PROGRAM EDUCATIONAL OBJECTIVE';
+  removeButton.classList.add('remove-peo-button');
+
+  // Setting values
+  listItem.appendChild(captionTextArea);
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  programEducationalObjectivesList.appendChild(listItem);
+  peoList.push('peoListItemCapt' + (latestIndex).toString());
+  addRemoveListener();
+})
+
+// Remove A Program Educational Objective
+
+const addRemoveListener = () => {
+  const removePeoButton = document.querySelectorAll('.remove-peo-button');
+  removePeoButton.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = peoList.indexOf(e.currentTarget.parentElement.id);
+      if (index > -1) { // only splice array when item is found
+        peoList.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      e.currentTarget.parentElement.remove()
+    })
+  })
+}
+
+const removePeoItems = () => {
+  // Refresh Program Educational Objectives list order
+  const listItems = document.querySelector('.level-list').children;
+  peoList.length = 0;
+  const listArray = [...listItems];
+  listArray.forEach((item, index) => {
+    item.id = 'peoListItemCapt' + (index + 1).toString();
+    const peoCapt = item.querySelector('textarea:first-child');
+    const peoDesc = item.querySelector('textarea:nth-child(2)');
+    peoCapt.id = `peoListItemCapt${index + 1}`;
+    peoDesc.id = `peoListItemDesc${index + 1}`;
+    peoList.push(`peoListItemCapt${index + 1}`);
+  })
+}
+addRemoveListener();
