@@ -71,6 +71,10 @@ const fillContent = async () => {
     const programEducationalObjectivesList = document.querySelector('.level-list');
     const peoList = [];
 
+    // Program Outcomes List
+    const programOutcomesList = document.querySelector('.outcomes');
+    const poList = [];
+
     Object.keys(dataPEO).forEach((id) => {
       if (docSnapPEO.exists()) {
         peoList.push(id);
@@ -93,6 +97,65 @@ const fillContent = async () => {
       programEducationalObjectivesList.appendChild(listItem);
     })
     // End of Program Educational Objectives List
+
+    // Peo List Reference
+    const docRefPO = doc(firestoreDb, "College Of Engineering", "bscpePO");
+    const docSnapPO = await getDoc(docRefPO);
+    const dataPO = docSnapPO.data();
+
+
+    Object.keys(dataPO).forEach((id) => {
+      if (docSnapPEO.exists()) {
+        poList.push(id);
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    
+    })
+    poList.sort()
+    poList.forEach((key, index) => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('outcome');
+      const outcomeNum = document.createElement('p');
+      outcomeNum.classList.add('outcome-num')
+      outcomeNum.innerText = index + 1;
+      const outcomeDesc = document.createElement('p');
+      outcomeDesc.classList.add('outcome-desc')
+      outcomeDesc.innerText = dataPO[key]['poDesc'];
+      listItem.appendChild(outcomeNum);
+      listItem.appendChild(outcomeDesc);
+      programOutcomesList.appendChild(listItem);
+    })
+    // End of Program Outcomes List
+
+
+    // EML Positions List
+    const entryMidLevelList = document.querySelector('#entry-mid-level');
+    const emlList = [];
+
+    // EML List Reference
+    const docRefEML = doc(firestoreDb, "College Of Engineering", "bscpeEntryMidLevel");
+    const docSnapEML = await getDoc(docRefEML);
+    const dataEML = docSnapEML.data();
+
+
+    Object.keys(dataEML).forEach((id) => {
+      if (docSnapEML.exists()) {
+        emlList.push(id);
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    
+    })
+    emlList.sort()
+    emlList.forEach((key, index) => {
+      const listItem = document.createElement('li');
+      listItem.innerText = dataEML[key]['emlDesc'];
+      entryMidLevelList.appendChild(listItem);
+    })
+    // End of Program Outcomes List
 }
 
 fillContent()
