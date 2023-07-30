@@ -1268,3 +1268,21 @@ li > textarea {
 .peoListItem textarea:first-child {
 	font-weight: bold;
 }
+
+.add-peo-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: var(--clr-primary-red);
+	font-family: "Open Sans", sans-serif;
+	color: var(--clr-white);
+	font-weight: bold;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.add-peo-button:hover {
+	color: #F97D01;
+}

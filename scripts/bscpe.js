@@ -81,7 +81,6 @@ const fillContent = async () => {
     
     })
     peoList.sort()
-    console.log(peoList)
     peoList.forEach((key) => {
       const listItem = document.createElement('li');
       const listCaption = document.createElement('b');
@@ -89,6 +88,7 @@ const fillContent = async () => {
       listCaption.innerText = dataPEO[key]['peoCapt'];
       listDescription.innerText = dataPEO[key]['peoDesc'];
       listItem.appendChild(listCaption);
+      listItem.appendChild(document.createTextNode("\u00A0"));
       listItem.appendChild(listDescription);
       programEducationalObjectivesList.appendChild(listItem);
     })
