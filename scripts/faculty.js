@@ -1,31 +1,51 @@
-        // Function to show/hide load more buttons
-        function toggleLoadMoreButtons(show) {
-            const loadMoreButtons = document.querySelectorAll('.btn-area');
-            loadMoreButtons.forEach(button => {
-                button.style.display = show ? 'flex' : 'none';
-            });
+const searchInput = document.getElementById('search');
+const departments = document.querySelectorAll('.department');
+
+// Function to filter sections based on search term
+function filterSections(department, searchTerm) {
+    const sections = department.querySelectorAll('.section');
+    const hiddenSections = department.querySelectorAll('.hidden-section');
+
+    let departmentHasVisibleSections = false;
+
+    for (const section of sections) {
+        const title = section.querySelector('.title').innerText.toLowerCase();
+        const description = section.querySelector('.description').innerText.toLowerCase();
+
+        const shouldDisplay = searchTerm === '' || title.includes(searchTerm) || description.includes(searchTerm);
+        section.style.display = shouldDisplay ? 'block' : 'none';
+
+        if (shouldDisplay) {
+            departmentHasVisibleSections = true;
         }
-    
-        // Function to perform the search
-        function performSearch() {
-            const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const facultySections = document.querySelectorAll('.section');
-    
-            // Hide load more buttons when searching
-            toggleLoadMoreButtons(false);
-    
-            facultySections.forEach(section => {
-                const facultyName = section.querySelector('.title').textContent.toLowerCase();
-                const facultyDescription = section.querySelector('.description').textContent.toLowerCase();
-                const isVisible = facultyName.includes(searchInput) || facultyDescription.includes(searchInput);
-                section.style.display = isVisible ? 'block' : 'none';
-            });
-    
-            // Show load more buttons when not searching
-            if (searchInput === '') {
-                toggleLoadMoreButtons(true);
-            }
+    }
+
+    // Toggle Load More/Less button visibility based on search
+    const toggleButton = department.querySelector('button');
+    toggleButton.style.display = departmentHasVisibleSections && searchTerm === '' ? 'block' : 'none';
+}
+
+// Search Functionality
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    for (const department of departments) {
+        filterSections(department, searchTerm);
+    }
+});
+
+// Load More/Less Functionality
+for (let i = 1; i <= departments.length; i++) {
+    const department = departments[i - 1];
+    const hiddenSections = department.querySelectorAll('.hidden-section');
+    const toggleButton = department.querySelector(`#toggleButton${i}`);
+
+    let areHiddenSectionsVisible = false;
+
+    toggleButton.addEventListener('click', () => {
+        for (const section of hiddenSections) {
+            section.style.display = areHiddenSectionsVisible ? 'none' : 'block';
         }
-    
-        // Event listener to trigger search on input change
-        document.getElementById('search-input').addEventListener('input', performSearch);
+        areHiddenSectionsVisible = !areHiddenSectionsVisible;
+        toggleButton.textContent = areHiddenSectionsVisible ? 'LOAD LESS' : 'LOAD MORE';
+    });
+}

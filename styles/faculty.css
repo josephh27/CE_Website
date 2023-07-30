@@ -703,6 +703,10 @@ header .search {
     background-color: gray; /* To be removed when images are already up */
 }
 
+.hidden-section {
+    display: none;
+}
+
 .department {
     display: flex;
     flex-wrap: wrap;
@@ -710,21 +714,7 @@ header .search {
     width: 100%;
 }
 
-.department input[type="checkbox"] {
-    display: none;
-}
-
-.department .section:nth-child(n + 6) {
-    display: none;
-    animation: moving 1s ease;
-}
-
-@keyframes moving {
-    from {transform: translateY(50px); opacity: 0;}
-    to {transform: translateY(0px); opacity: 1;}
-}
-
-.department .btn-area {
+.department .toggleButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -733,31 +723,9 @@ header .search {
     cursor: pointer;
     font-weight: var(--fw-bold);
     font-size: var(--fs-large);
-    border-radius: 2px;
-}
-
-.department .btn-area::before {
-    content: "LOAD MORE";
-}
-
-.department #btnBox:checked ~ .btn-area::before,
-.department #btnBox1:checked ~ .btn-area::before,
-.department #btnBox2:checked ~ .btn-area::before,
-.department #btnBox3:checked ~ .btn-area::before,
-.department #btnBox4:checked ~ .btn-area::before,
-.department #btnBox5:checked ~ .btn-area::before,
-.department #btnBox6:checked ~ .btn-area::before {
-    content: "LOAD LESS";
-}
-
-.department #btnBox:checked ~ .section:nth-child(n + 6),
-.department #btnBox1:checked ~ .section:nth-child(n + 6),
-.department #btnBox2:checked ~ .section:nth-child(n + 6),
-.department #btnBox3:checked ~ .section:nth-child(n + 6),
-.department #btnBox4:checked ~ .section:nth-child(n + 6),
-.department #btnBox5:checked ~ .section:nth-child(n + 6),
-.department #btnBox6:checked ~ .section:nth-child(n + 6) {
-    display: block;
+    outline: none;
+    border: none;
+    background: none;
 }
 
 /* Responsive style for small screens */
