@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/pup-about-faculty.css" />
+    <link rel="stylesheet" href="styles/faculty.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="assets\images\logo-pup.png">
-    <title>PUP Officials and Staffs</title>
+    <title>PUP Faculty</title>
   </head>
   <body>
 	<!-- Header starts here -->
@@ -205,15 +205,13 @@
 			<div class="main-contents">
 				<!-- Insert contents here -->
 				<div class="contents">
-
                     <!-- Search bar -->
                     <form action="" class="search-bar">
-                        <input type="text" placeholder="Search Faculty..." name="search">
+                        <input type="text" class="search-faculty" placeholder="Search Faculty..." name="search" id="search-input">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
 
-                    <div class="department">
-
+                    <div class="department" data-department="Civil Engineering">
                         <!-- Civil Engineering -->
                         <h3 class="page-title">
                             Civil Engineering
@@ -231,7 +229,17 @@
                         </div>
                         <div class="section">
                             <img>
-                            <h1 class="title">Remedios G. Ado, DEM</h1>
+                            <h1 class="title">Love G. Ado, DEM</h1>
+                            <p class="description">
+                                Associate Professor V
+                            </p>
+                            <p class="description">
+                                Dean (Officer-in-Charge)
+                            </p>
+                        </div>
+                        <div class="section">
+                            <img>
+                            <h1 class="title">Justine G. Ado, DEM</h1>
                             <p class="description">
                                 Associate Professor V
                             </p>
@@ -291,7 +299,7 @@
                         </div>
                         <div class="section">
                             <img>
-                            <h1 class="title">Remedios G. Ado, DEM</h1>
+                            <h1 class="title">Camille G. Ado, DEM</h1>
                             <p class="description">
                                 Associate Professor V
                             </p>
@@ -299,25 +307,10 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="section">
-                            <img>
-                            <h1 class="title">Remedios G. Ado, DEM</h1>
-                            <p class="description">
-                                Associate Professor V
-                            </p>
-                            <p class="description">
-                                Dean (Officer-in-Charge)
-                            </p>
-                        </div>
-                        <div class="button">
-                            <label for="btnBox" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox" class="btn-area"></label>
                     </div>
                     
-                    <div class="department">
+                    <div class="department" data-department="Computer Engineering">
                         <!-- Computer Engineering -->
                         <h3 class="page-title">
                             Computer Engineering
@@ -355,7 +348,7 @@
                         </div>
                         <div class="section">
                             <img>
-                            <h1 class="title">Remedios G. Ado, DEM</h1>
+                            <h1 class="title">Ronan G. Ado, DEM</h1>
                             <p class="description">
                                 Associate Professor V
                             </p>
@@ -413,12 +406,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox1" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox1" class="btn-area"></label>
                     </div>
 
                     <div class="department">
@@ -517,12 +505,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox2" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox2" class="btn-area"></label>
                     </div>
                     
                     <div class="department">
@@ -621,12 +604,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox3" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox3" class="btn-area"></label>
                     </div>
 
                     <div class="department">
@@ -725,12 +703,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox4" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox4" class="btn-area"></label>
                     </div>
 
                     <div class="department">
@@ -829,12 +802,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox5" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox5" class="btn-area"></label>
                     </div>
 
                     <div class="department">
@@ -933,12 +901,7 @@
                                 Dean (Officer-in-Charge)
                             </p>
                         </div>
-                        <div class="button">
-                            <label for="btnBox6" class="btn-area">
-                                <span class="btn1">LOAD MORE</span>
-                                <span class="btn2">LOAD LESS</span>
-                            </label>
-                        </div>
+                        <label for="btnBox6" class="btn-area"></label>
                     </div>
                 </div>
 
@@ -1093,6 +1056,7 @@
 			</div>
 		</footer>
 		<!-- Footer ends here -->
-    <script src="main.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/faculty.js"></script>
   </body>
 </html>

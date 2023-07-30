@@ -670,7 +670,6 @@ header .search {
 .search-bar button {
     border: 0;
     background: transparent;
-    cursor: pointer;
 }
 
 .search-bar button i {
@@ -683,84 +682,7 @@ header .search {
     color: var(--clr-primary-red);
 }
 
-.department {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 100%;
-}
-
-.department .section:nth-child(n + 6) {
-    display: none;
-    transition: 0.2s ease-in;
-}
-
-.department .btn-area {
-    display: block;
-    background: var(--clr-primary-red);
-    color: var(--clr-white);
-    cursor: pointer;
-    text-align: center;
-    font-weight: var(--fw-semi-bold);
-    font-size: var(--fs-regular);
-    width: 180px;
-    line-height: 50px;
-    border-radius: 2px;
-}
-
-.department .btn-area .btn2 {
-    display: none;
-}
-
-.department #btnBox,
-.department #btnBox1,
-.department #btnBox2,
-.department #btnBox3,
-.department #btnBox4,
-.department #btnBox5,
-.department #btnBox6 {
-    display: none;
-}
-
-.department #btnBox:checked ~ .section:nth-child(n + 6),
-.department #btnBox1:checked ~ .section:nth-child(n + 6),
-.department #btnBox2:checked ~ .section:nth-child(n + 6),
-.department #btnBox3:checked ~ .section:nth-child(n + 6),
-.department #btnBox4:checked ~ .section:nth-child(n + 6),
-.department #btnBox5:checked ~ .section:nth-child(n + 6),
-.department #btnBox6:checked ~ .section:nth-child(n + 6) {
-    display: block;
-    transition: 0.5s ease;
-}
-
-.department #btnBox:checked ~ .btn2,
-.department #btnBox1:checked ~ .btn2,
-.department #btnBox2:checked ~ .btn2,
-.department #btnBox3:checked ~ .btn2,
-.department #btnBox4:checked ~ .btn2,
-.department #btnBox5:checked ~ .btn2,
-.department #btnBox6:checked ~ .btn2 {
-    display: block;
-}
-
-.department #btnBox:checked ~ .btn1,
-.department #btnBox1:checked ~ .btn1,
-.department #btnBox2:checked ~ .btn1,
-.department #btnBox3:checked ~ .btn1,
-.department #btnBox4:checked ~ .btn1,
-.department #btnBox5:checked ~ .btn1,
-.department #btnBox6:checked ~ .btn1 {
-    display: block;
-}
-
-/* Style the sections to have two items in one row */
+/* Style the sections to have three items in one row */
 .section {
     gap: 16px;
     flex: 0 0 calc(30% - 10px); /* Each section takes 45% width with a small gap */
@@ -779,6 +701,63 @@ header .search {
     border-radius: 2px;
     box-shadow: 0 2px 4px var(--clr-black);
     background-color: gray; /* To be removed when images are already up */
+}
+
+.department {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.department input[type="checkbox"] {
+    display: none;
+}
+
+.department .section:nth-child(n + 6) {
+    display: none;
+    animation: moving 1s ease;
+}
+
+@keyframes moving {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0px); opacity: 1;}
+}
+
+.department .btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    color: var(--clr-primary-red);
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-large);
+    border-radius: 2px;
+}
+
+.department .btn-area::before {
+    content: "LOAD MORE";
+}
+
+.department #btnBox:checked ~ .btn-area::before,
+.department #btnBox1:checked ~ .btn-area::before,
+.department #btnBox2:checked ~ .btn-area::before,
+.department #btnBox3:checked ~ .btn-area::before,
+.department #btnBox4:checked ~ .btn-area::before,
+.department #btnBox5:checked ~ .btn-area::before,
+.department #btnBox6:checked ~ .btn-area::before {
+    content: "LOAD LESS";
+}
+
+.department #btnBox:checked ~ .section:nth-child(n + 6),
+.department #btnBox1:checked ~ .section:nth-child(n + 6),
+.department #btnBox2:checked ~ .section:nth-child(n + 6),
+.department #btnBox3:checked ~ .section:nth-child(n + 6),
+.department #btnBox4:checked ~ .section:nth-child(n + 6),
+.department #btnBox5:checked ~ .section:nth-child(n + 6),
+.department #btnBox6:checked ~ .section:nth-child(n + 6) {
+    display: block;
 }
 
 /* Responsive style for small screens */
@@ -820,8 +799,6 @@ header .search {
 
     .department .btn-area {
         font-size: 14px;
-        width: 130px;
-        line-height: 40px;
     }
 }
 
@@ -866,8 +843,6 @@ header .search {
 
     .department .btn-area {
         font-size: 12px;
-        width: 110px;
-        line-height: 30px;
     }
 }
 
@@ -911,9 +886,8 @@ header .search {
     }
 
     .department .btn-area {
+        flex-basis: 100%;
         font-size: 10px;
-        width: 80px;
-        line-height: 25px;
     }
 }
 
