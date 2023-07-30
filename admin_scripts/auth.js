@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
             const password = loginForm['password'].value;
 
             signInWithEmailAndPassword(auth, email, password).then((cred) => {
-                window.location.href = "/admin/bscpe_admin.html";
+                window.location.href = "../admin/bscpe_admin.html";
             }).catch((err) => {
                 alert(err.message);
             })
