@@ -1,0 +1,116 @@
+<!-- PUP Langing Page Header -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import css -->
+    <link rel="stylesheet" href="../admin_styles/style.css" />
+    <!-- Import fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Page logo -->
+    <link rel="icon" href="../assets/images/logo-pup.png">
+    <!-- Page title -->
+    <title>PUPCE - Admin Login </title>
+  </head>
+  <body>
+    <!-- Header starts here -->
+    <header>
+      <div class="header-container">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- Logo images-->
+          <img
+            src="../assets/images/logo-engineering.jpg"
+            width="80"
+            height="80"
+          />
+          <!-- Logo name -->
+          <div class="logo-name">
+            Polytechnic University of the Philippines <br />
+            <b>College of Engineering</b>
+          </div>
+        </a>
+        <ul>
+          <li class="logged-in">
+            <!-- Log out button -->
+            <button type="logout"><p class="logout">Log out</p><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </header>
+    <div class="login-section-container">
+      <!-- Login box -->
+      <div class="login-section">
+        <!-- Logo container -->
+        <div class="logo">
+          <!-- Logo images-->
+          <img src="../assets/images/logo-pup.png">
+          <img src="../assets/images/logo-engineering.jpg">
+        </div>
+        <!-- Texts container -->
+        <div class="page-name">
+          <div class="pup-name">Polytechnic University of the Philippines</div>
+          <div class="college-name">College of Engineering</div>
+          <div class="mode-name">Admin Mode</div>
+        </div>
+        <!-- Directions -->
+        <div class="direction">Sign in to start your session</div>
+        <!-- Login form -->
+        <form id="login-form">
+          <!-- Contains all credentials -->
+          <div class="credentials-section">
+            <!-- Username credential container -->
+            <div class="credential">
+              <!-- Username icon -->
+              <i class="fa-solid fa-user"></i>
+              <!-- Username input box -->
+              <input type="text" placeholder="Username" id="username" required="required">
+            </div>
+            <!-- Password credential container -->
+            <div class="credential">
+              <!-- Password icon -->
+              <i class="fa-solid fa-lock"></i>
+              <!-- Password inputbox -->
+              <input type="password" placeholder="Password" id="password"  required="required">
+              <!-- Show password icon -->
+              <i class="fa-regular fa-eye eye" id="eye-icon"></i>
+            </div>
+            <!-- Login button -->
+            <button type="submit">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="wide-department-buttons-container">
+      <a href="#" class="department-button" id="ce-button">
+          BACHELOR OF SCIENCE IN CIVIL ENGINEERING</a>
+      </a>
+      <a href="../admin/bscpe_admin.html" class="department-button" id="cpe-button">
+          BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</a>
+      </a>
+      <a href="#" class="department-button" id="ee-button">
+          BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING</a>
+      </a>
+      <a href="#" class="department-button" id="ece-button">
+          BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING</a>
+      </a>
+      <a href="#" class="department-button" id="ie-button">
+          BACHELOR OF SCIENCE IN INDUSTRIAL ENGINEERING</a>
+      </a>
+      <a href="#" class="department-button" id="me-button">
+          BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING</a>
+      </a>
+      <a href="#" class="department-button" id="re-button">
+          BACHELOR OF SCIENCE IN RAILWAY ENGINEERING</a>
+      </a>
+    </div>
+    <!-- Import script -->
+    <script src="../admin_scripts/login.js"></script>
+    <script type="module" src="../admin_scripts/auth.js"></script>
+    <script type="module" src="../admin_scripts/index.js"></script>
+
+  </body>
+</html>

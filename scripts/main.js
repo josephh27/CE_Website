@@ -93,7 +93,7 @@ const fetchDeptNameDesc = async (department) => {
 	wideDeptTitle.innerText = data[department]["name"];
 };
 wideDeptButton.forEach((elem) => {
-	elem.addEventListener("click", (e) => {
+	elem.addEventListener("mouseover", (e) => {
 		fetchDeptNameDesc(e.currentTarget.id);
 	});
 });
