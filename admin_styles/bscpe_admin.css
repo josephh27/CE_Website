@@ -1269,7 +1269,22 @@ li > textarea {
 	font-weight: bold;
 }
 
-.add-peo-button {
+#add-peo-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: rgb(46, 164, 79);
+	font-family: "Open Sans", sans-serif;
+	color: var(--clr-white);
+	font-weight: bold;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	
+}
+
+.remove-peo-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1281,8 +1296,32 @@ li > textarea {
 	padding: 20px;
 	cursor: pointer;
 	border-radius: 5px;
+	font-size: 1rem;
 }
 
-.add-peo-button:hover {
+#main-form-submit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--clr-primary-red);
+	font-family: "Open Sans", sans-serif;
+	color: var(--clr-white);
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 40px auto;
+}
+
+#add-peo-button:hover {
+	background: rgba(46, 164, 79, 0.8)
+}
+
+.remove-peo-button:hover, #main-form-submit:hover {
 	color: #F97D01;
+}
+
+.peoListItem {
+	margin-bottom: 30px;
 }
