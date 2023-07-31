@@ -295,7 +295,7 @@ header .search {
 .content-header {
     height: 400px;
     width: 100%;
-    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("pup-background_03.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -558,7 +558,7 @@ header .search {
 /* Footer */
 footer {
     width: 100%;
-    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("../assets/images/pup-background_03.jpg");
+    background: linear-gradient(0deg, rgba(87, 0, 0, 0.925) 0%, rgba(87, 0, 0, 0.925) 100%), url("pup-background_03.jpg");
     background-size: cover;
     background-position: top;
     font-family: 'Open Sans', sans-serif;
