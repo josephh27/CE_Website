@@ -50,7 +50,6 @@ const fillContent = async () => {
     Object.keys(data).forEach((id) => {
       if (docSnap.exists()) {
         const element = document.querySelector(`#${id}`)
-        console.log(id);
         element.textContent = data[id]
       } else {
         // docSnap.data() will be undefined in this case

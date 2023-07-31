@@ -24,7 +24,6 @@
 	--fs-header-03: 1.953rem;
 	--fs-header-04: 1.563rem;
 	--fs-large: 1.25rem;
-    --fs-medium: 1.1    rem;
 	--fs-regular: 1rem;
 	--fs-small: 0.8rem;
 
@@ -58,13 +57,6 @@ body {
 	color: var(--clr-primary-red);
 }
 
-.page-subtitle {
-	font-size: var(--fs-medium);
-	font-weight: var(--fw-regular);
-	width: 100%;
-	color: var(--clr-black-75);
-}
-
 .title {
 	font-size: var(--fs-large);
 	font-weight: var(--fw-bold);
@@ -78,6 +70,15 @@ body {
 	line-height: 2;
 	width: 100%;
 	color: var(--clr-black);
+}
+
+.description.numbered-list {
+    margin-left: 1.3em;
+}
+
+.description.alphabetical-list {
+    margin-left: calc(1.3em * 2);
+    padding: 10px 0;
 }
 /* Utility classes ends here */
 
@@ -146,7 +147,7 @@ body {
 .contents {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 40px;
 	padding-inline: 40px;
 	padding-block: 40px;
 	width: 100%;
@@ -156,11 +157,26 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	width: 100%;	
+}
+
+.img-container {
 	width: 100%;
+	height: auto;
+	display: flex;
+	gap: 40px;
+}
+
+.section.half {
+	width: auto;
+}
+
+.section.img {
+	gap: 40px;
 }
 
 .section ul {
-    margin-left: 2.6em;
+    margin-left: 1.3em;
     color: var(--clr-primary-red);
     font-size: var(--fs-regular);
     font-weight: var(--fw-semi-bold);
@@ -176,6 +192,62 @@ body {
     text-decoration: underline;
 }
 
+.content-img {
+	height: 100%;
+	width: 100%;	
+	float: left;
+	background: url("../assets/images/cea-2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+/* Ordered List */
+/* Program Outcomes starts here */
+.element {
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	place-items: center start;
+	gap: 16px;
+	width: 100%;
+}
+
+.element.indent {
+	padding-left: 56px;
+}
+
+.list-elements {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+}
+
+.element .element-num {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 35px;
+	width: 35px;
+	color: var(--clr-white);
+	border-radius: 50%;
+	background: var(--clr-primary-red);
+	box-shadow: 0px 5px 5px var(--clr-black-25);
+}
+
+.element .element-desc {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	width: 100%;
+	border-radius: 10px;
+	padding: 16px;
+	background: var(--clr-white);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	line-height: 2;
+}
+/* Orderedd list ends here */
+
 /* Sidebar starts here */
 .sidebar-contents {
 	height: 100%;
@@ -186,10 +258,10 @@ body {
 	position: sticky;
 	display: flex;
 	flex-direction: column;
-    padding-top: 40px;
 	width: 100%;
 	gap: 24px;
 	top: 0;
+	padding-top: 40px;
 }
 
 .sidebar {
@@ -232,11 +304,6 @@ body {
 	padding-left: 16px;
 	font-size: var(--fs-small);
 }
-
-.sidebar-item a:hover {
-    color: var(--clr-primary-red);
-}
-
 /* Sidebar ends here */
 
 /* Main container responsiveness starts here */
@@ -249,6 +316,19 @@ body {
 	} */
 }
 
+@media (max-width: 1100px) {
+	.img-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content-img {
+		height: 200px;
+		width: 100%;
+		background-position: 1px;
+	}
+}
+
 @media (max-width: 800px) {
 	.main-contents {
 		grid-template-columns: 1fr;
@@ -256,7 +336,6 @@ body {
 
 	.sidebar-list {
 		position: relative;
-        padding-top: 0px;
 	}
 }
 
@@ -266,6 +345,21 @@ body {
 	.directory-contents i {
 		font-size: var(--fs-small) !important;
 		text-decoration: none;
+	}
+
+	.element {
+		grid-template-columns: 1fr;
+		place-items: center;
+	}
+
+	.element.indent {	
+		padding: 0 40px;
+	}
+
+	.element .element-num {
+		width: 100% !important;
+		border-radius: 10px !important;
+		box-shadow: 0px 2px 2px var(--clr-black-25);
 	}
 
 	/* .program-contents h3 {
