@@ -155,7 +155,119 @@ const fillContent = async () => {
       listItem.innerText = dataEML[key]['emlDesc'];
       entryMidLevelList.appendChild(listItem);
     })
-    // End of Program Outcomes List
+    // End of Entry-Mid Level Positions List
+
+
+    // EML Positions List
+    const advancedLevelList = document.querySelector('#advanced-level');
+    const advList = [];
+
+    // EML List Reference
+    const docRefAdv = doc(firestoreDb, "College Of Engineering", "bscpeAdvanced");
+    const docSnapAdv = await getDoc(docRefAdv);
+    const dataAdv = docSnapAdv.data();
+
+
+    Object.keys(dataAdv).forEach((id) => {
+      if (docSnapAdv.exists()) {
+        advList.push(id);
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    
+    })
+    advList.sort()
+    advList.forEach((key, index) => {
+      const listItem = document.createElement('li');
+      listItem.innerText = dataAdv[key]['advDesc'];
+      advancedLevelList.appendChild(listItem);
+    })
+    // End of Advanced Level Positions List
+
+     // Admission Requirements List
+     const bscpeAdmissionList = document.querySelector('#admission-req-list');
+     const admissionList = [];
+ 
+     // EML List Reference
+     const docRefAdmission = doc(firestoreDb, "College Of Engineering", "bscpeAdmission");
+     const docSnapAdmission = await getDoc(docRefAdmission);
+     const dataAdmission = docSnapAdmission.data();
+ 
+ 
+     Object.keys(dataAdmission).forEach((id) => {
+       if (docSnapAdmission.exists()) {
+         admissionList.push(id);
+       } else {
+         // docSnap.data() will be undefined in this case
+         console.log("No such document!");
+       }
+     
+     })
+     admissionList.sort()
+     admissionList.forEach((key, index) => {
+       const listItem = document.createElement('li');
+       listItem.innerText = dataAdmission[key]['admissionDesc'];
+       bscpeAdmissionList.appendChild(listItem);
+     })
+     // End of Admission Requirements List
+
+
+     // Retention Requirements List
+     const bscpeRetention = document.querySelector('#retention-steps');
+     const retentionList = [];
+ 
+     // EML List Reference
+     const docRefRetention = doc(firestoreDb, "College Of Engineering", "bscpeRetention");
+     const docSnapRetention = await getDoc(docRefRetention);
+     const dataRetention = docSnapRetention.data();
+ 
+ 
+     Object.keys(dataRetention).forEach((id) => {
+       if (docSnapRetention.exists()) {
+         retentionList.push(id);
+       } else {
+         // docSnap.data() will be undefined in this case
+         console.log("No such document!");
+       }
+     
+     })
+     retentionList.sort()
+     retentionList.forEach((key, index) => {
+       const listItem = document.createElement('li');
+       listItem.innerText = dataRetention[key]['retentionDesc'];
+       bscpeRetention.appendChild(listItem);
+     })
+     // End of Retention Requirements List
+
+
+     // Graduation Requirements List
+     const bscpeGraduation = document.querySelector('#grad-reqs');
+     const graduationList = [];
+ 
+     // EML List Reference
+     const docRefGraduation = doc(firestoreDb, "College Of Engineering", "bscpeGraduation");
+     const docSnapGraduation = await getDoc(docRefGraduation);
+     const dataGraduation = docSnapGraduation.data();
+ 
+ 
+     Object.keys(dataGraduation).forEach((id) => {
+       if (docSnapGraduation.exists()) {
+         graduationList.push(id);
+       } else {
+         // docSnap.data() will be undefined in this case
+         console.log("No such document!");
+       }
+     
+     })
+     graduationList.sort()
+     graduationList.forEach((key, index) => {
+       const listItem = document.createElement('li');
+       listItem.innerText = dataGraduation[key]['graduationDesc'];
+       bscpeGraduation.appendChild(listItem);
+     })
+     // End of Retention Requirements List
+
 }
 
 fillContent()
