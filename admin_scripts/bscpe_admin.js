@@ -120,9 +120,15 @@ bscpeForm.addEventListener('submit', (e) => {
       }).catch(err => {
         console.log(err.message);
     });
+    // Refresh list items in order
     removePeoItems();
     removePoItems();
     removeEmlItems();
+    removeAdvItems();
+    removeAdmissionItems();
+    removeRetentionItems();
+    removeGraduationItems();
+
     // Setting Program Educational Objectives list items
     const newDocPEO = {};
     peoList.sort();
@@ -165,6 +171,69 @@ bscpeForm.addEventListener('submit', (e) => {
     })
     setDoc(doc(firestoreDb, "College Of Engineering", "bscpeEntryMidLevel"), 
     newDocEML).then(() => {
+        console.log('success');
+      }).catch(err => {
+        console.log(err.message);
+    });
+    // Setting Advanced Level Positions list items
+    const newDocADV = {};
+    advList.sort();
+    advList.forEach((key, index) => {
+      newDocADV[key] = 
+    {
+      advDesc: bscpeForm['advListItemDesc' + (index+1).toString()].value.trim()
+    }
+    })
+    setDoc(doc(firestoreDb, "College Of Engineering", "bscpeAdvanced"), 
+    newDocADV).then(() => {
+        console.log('success');
+      }).catch(err => {
+        console.log(err.message);
+    });
+
+    // Setting Admission Requirements list items
+    const newDocAdmission = {};
+    admissionList.sort();
+    admissionList.forEach((key, index) => {
+      newDocAdmission[key] = 
+    {
+      admissionDesc: bscpeForm['admissionListItemDesc' + (index+1).toString()].value.trim()
+    }
+    })
+    setDoc(doc(firestoreDb, "College Of Engineering", "bscpeAdmission"), 
+    newDocAdmission).then(() => {
+        console.log('success');
+      }).catch(err => {
+        console.log(err.message);
+    });
+
+    // Setting Retention Requirements list items
+    const newDocRetention = {};
+    retentionList.sort();
+    retentionList.forEach((key, index) => {
+      newDocRetention[key] = 
+    {
+      retentionDesc: bscpeForm['retentionListItemDesc' + (index+1).toString()].value.trim()
+    }
+    })
+    setDoc(doc(firestoreDb, "College Of Engineering", "bscpeRetention"), 
+    newDocRetention).then(() => {
+        console.log('success');
+      }).catch(err => {
+        console.log(err.message);
+    });
+
+    // Setting Graduation Requirements list items
+    const newDocGraduation = {};
+    graduationList.sort();
+    graduationList.forEach((key, index) => {
+      newDocGraduation[key] = 
+    {
+      graduationDesc: bscpeForm['graduationListItemDesc' + (index+1).toString()].value.trim()
+    }
+    })
+    setDoc(doc(firestoreDb, "College Of Engineering", "bscpeGraduation"), 
+    newDocGraduation).then(() => {
         console.log('success');
       }).catch(err => {
         console.log(err.message);
@@ -384,12 +453,12 @@ emlList.forEach((id, index) => {
   // Create description textarea
   const descriptionTextArea = document.createElement('textarea');
   descriptionTextArea.setAttribute('cols', 30);
-  descriptionTextArea.setAttribute('rows', 2);
+  descriptionTextArea.setAttribute('rows', 1);
   descriptionTextArea.id = `emlListItemDesc${index+1}` 
 
   //Create remove button 
   const removeButton = document.createElement('button');
-  removeButton.textContent = 'REMOVE PROGRAM ENTRY-MID LEVEL POSITION';
+  removeButton.textContent = 'REMOVE ENTRY-MID LEVEL POSITION';
   removeButton.classList.add('remove-eml-button');
 
   // Setting values
@@ -411,12 +480,12 @@ addEmlButton.addEventListener('click', (e) => {
   // Create description textarea
   const descriptionTextArea = document.createElement('textarea');
   descriptionTextArea.setAttribute('cols', 30);
-  descriptionTextArea.setAttribute('rows', 2);
+  descriptionTextArea.setAttribute('rows', 1);
   descriptionTextArea.id = `emlListItemDesc${latestIndex}` 
 
   //Create remove button 
   const removeButton = document.createElement('button');
-  removeButton.textContent = 'REMOVE PROGRAM ENTRY-MID LEVEL POSITION';
+  removeButton.textContent = 'REMOVE ENTRY-MID LEVEL POSITION';
   removeButton.classList.add('remove-eml-button');
 
   // Setting values
@@ -458,3 +527,415 @@ const removeEmlItems = () => {
 }
 addRemoveEmlButton();
 // End of Program Entry-Mid level positions
+
+// Making advanced level positions dynamic
+// Fetch current data 
+const docRefAdv = doc(firestoreDb, "College Of Engineering", "bscpeAdvanced");
+const docSnapAdv = await getDoc(docRefAdv);
+const dataAdv = docSnapAdv.data();
+
+// Program Educational Objectives List
+const bscpeAdvancedList = document.querySelector('#advanced-level');
+const advList = [];
+
+Object.keys(dataAdv).forEach((id) => {
+  if (docSnap.exists()) {
+    advList.push(id);
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+})
+// Putting in a list so it can be sorted
+advList.sort();
+advList.forEach((id, index) => {
+  const listItem = document.createElement('li');
+  listItem.classList.add('advListItem')
+  listItem.id = id;
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 1);
+  descriptionTextArea.id = `advListItemDesc${index+1}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE ADVANCED LEVEL POSITION';
+  removeButton.classList.add('remove-adv-button');
+
+  // Setting values
+  descriptionTextArea.textContent = dataAdv[id].advDesc;
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeAdvancedList.appendChild(listItem);
+})
+
+// Add another Program Educational Objective
+const addAdvButton = document.querySelector('#add-adv-button');
+addAdvButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const latestIndex = advList.length + 1;
+  const listItem = document.createElement('li');
+  listItem.classList.add('advListItem')
+  listItem.id = 'advListItem' + (latestIndex).toString();
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 1);
+  descriptionTextArea.id = `advListItemDesc${latestIndex}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE ADVANCED LEVEL POSITION';
+  removeButton.classList.add('remove-adv-button');
+
+  // Setting values
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeAdvancedList.appendChild(listItem);
+  advList.push('peoListItemCapt' + (latestIndex).toString());
+  addRemoveAdvButton();
+})
+
+// Remove A Program Educational Objective
+
+// Adding an event listener to the newly added remove button
+const addRemoveAdvButton = () => {
+  const removeAdvButton = document.querySelectorAll('.remove-adv-button');
+  removeAdvButton.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = advList.indexOf(e.currentTarget.parentElement.id);
+      if (index > -1) { // only splice array when item is found
+        advList.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      e.currentTarget.parentElement.remove()
+    })
+  })
+}
+
+const removeAdvItems = () => {
+  // Refresh Program Educational Objectives list order
+  const listItems = document.querySelector('#advanced-level').children;
+  advList.length = 0;
+  const listArray = [...listItems];
+  listArray.forEach((item, index) => {
+    item.id = 'advListItem' + (index + 1).toString();
+    const advDesc = item.querySelector('textarea:first-child');
+    advDesc.id = `advListItemDesc${index + 1}`;
+    advList.push(`advListItem${index + 1}`);
+  })
+}
+addRemoveAdvButton();
+// End of Program Advanced level positions
+
+// Making admission requirements list dynamic
+// Fetch current data 
+const docRefAdmission = doc(firestoreDb, "College Of Engineering", "bscpeAdmission");
+const docSnapAdmission = await getDoc(docRefAdmission);
+const dataAdmission = docSnapAdmission.data();
+
+// Admission Requirements List
+const bscpeAdmissionList = document.querySelector('#admission-req-list');
+const admissionList = [];
+
+Object.keys(dataAdmission).forEach((id) => {
+  if (docSnap.exists()) {
+    admissionList.push(id);
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+})
+// Putting in a list so it can be sorted
+admissionList.sort();
+admissionList.forEach((id, index) => {
+  const listItem = document.createElement('li');
+  listItem.classList.add('admissionListItem')
+  listItem.id = id;
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 2);
+  descriptionTextArea.id = `admissionListItemDesc${index+1}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE ADMISSION REQUIREMENT';
+  removeButton.classList.add('remove-admission-button');
+
+  // Setting values
+  descriptionTextArea.textContent = dataAdmission[id].admissionDesc;
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeAdmissionList.appendChild(listItem);
+})
+
+// Add another Admission Requirement
+const addAdmissionButton = document.querySelector('#add-admission-button');
+addAdmissionButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const latestIndex = admissionList.length + 1;
+  const listItem = document.createElement('li');
+  listItem.classList.add('admissionListItem')
+  listItem.id = 'admissionListItem' + (latestIndex).toString();
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 1);
+  descriptionTextArea.id = `admissionListItemDesc${latestIndex}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE ADMISSION REQUIREMENT';
+  removeButton.classList.add('remove-admission-button');
+
+  // Setting values
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeAdmissionList.appendChild(listItem);
+  admissionList.push('admissionListItemCapt' + (latestIndex).toString());
+  addRemoveAdmissionButton();
+})
+
+// Remove An Admission Requirement
+
+// Adding an event listener to the newly added remove button
+const addRemoveAdmissionButton = () => {
+  const removeAdmissionButton = document.querySelectorAll('.remove-admission-button');
+  removeAdmissionButton.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = admissionList.indexOf(e.currentTarget.parentElement.id);
+      if (index > -1) { // only splice array when item is found
+        admissionList.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      e.currentTarget.parentElement.remove()
+    })
+  })
+}
+
+const removeAdmissionItems = () => {
+  // Refresh Program Educational Objectives list order
+  const listItems = document.querySelector('#admission-req-list').children;
+  admissionList.length = 0;
+  const listArray = [...listItems];
+  listArray.forEach((item, index) => {
+    item.id = 'admissionListItem' + (index + 1).toString();
+    const admissionDesc = item.querySelector('textarea:first-child');
+    admissionDesc.id = `admissionListItemDesc${index + 1}`;
+    admissionList.push(`admissionListItem${index + 1}`);
+  })
+}
+addRemoveAdmissionButton();
+// End of admission requirements
+
+// Making admission requirements list dynamic
+// Fetch current data 
+const docRefRetention = doc(firestoreDb, "College Of Engineering", "bscpeRetention");
+const docSnapRetention = await getDoc(docRefRetention);
+const dataRetention = docSnapRetention.data();
+
+// Admission Requirements List
+const bscpeRetentionList = document.querySelector('#retention-steps');
+const retentionList = [];
+
+Object.keys(dataRetention).forEach((id) => {
+  if (docSnap.exists()) {
+    retentionList.push(id);
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+})
+// Putting in a list so it can be sorted
+retentionList.sort();
+retentionList.forEach((id, index) => {
+  const listItem = document.createElement('li');
+  listItem.classList.add('retentionListItem')
+  listItem.id = id;
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 2);
+  descriptionTextArea.id = `retentionListItemDesc${index+1}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE RETENTION REQUIREMENT';
+  removeButton.classList.add('remove-retention-button');
+
+  // Setting values
+  descriptionTextArea.textContent = dataRetention[id].retentionDesc;
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeRetentionList.appendChild(listItem);
+})
+
+// Add another Admission Requirement
+const addRetentionButton = document.querySelector('#add-retention-button');
+addRetentionButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const latestIndex = retentionList.length + 1;
+  const listItem = document.createElement('li');
+  listItem.classList.add('retentionListItem')
+  listItem.id = 'retentionListItem' + (latestIndex).toString();
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 2);
+  descriptionTextArea.id = `retentionListItemDesc${latestIndex}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE RETENTION REQUIREMENT';
+  removeButton.classList.add('remove-retention-button');
+
+  // Setting values
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeRetentionList.appendChild(listItem);
+  retentionList.push('retentionListItemCapt' + (latestIndex).toString());
+  addRemoveRetentionButton();
+})
+
+// Remove An Admission Requirement
+
+// Adding an event listener to the newly added remove button
+const addRemoveRetentionButton = () => {
+  const addRemoveRetentionButton = document.querySelectorAll('.remove-retention-button');
+  addRemoveRetentionButton.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = retentionList.indexOf(e.currentTarget.parentElement.id);
+      if (index > -1) { // only splice array when item is found
+        retentionList.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      e.currentTarget.parentElement.remove()
+    })
+  })
+}
+
+const removeRetentionItems = () => {
+  // Refresh Program Educational Objectives list order
+  const listItems = document.querySelector('#retention-steps').children;
+  retentionList.length = 0;
+  const listArray = [...listItems];
+  listArray.forEach((item, index) => {
+    item.id = 'retentionListItem' + (index + 1).toString();
+    const retentionDesc = item.querySelector('textarea:first-child');
+    retentionDesc.id = `retentionListItemDesc${index + 1}`;
+    retentionList.push(`retentionListItem${index + 1}`);
+  })
+}
+addRemoveRetentionButton();
+
+
+// Making graduation requirements list dynamic
+// Fetch current data 
+const docRefGraduation = doc(firestoreDb, "College Of Engineering", "bscpeGraduation");
+const docSnapGraduation = await getDoc(docRefGraduation);
+const dataGraduation = docSnapGraduation.data();
+
+// Admission Requirements List
+const bscpeGraduationList = document.querySelector('#grad-reqs');
+const graduationList = [];
+
+Object.keys(dataGraduation).forEach((id) => {
+  if (docSnap.exists()) {
+    graduationList.push(id);
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+})
+// Putting in a list so it can be sorted
+graduationList.sort();
+graduationList.forEach((id, index) => {
+  const listItem = document.createElement('li');
+  listItem.classList.add('graduationListItem')
+  listItem.id = id;
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 4);
+  descriptionTextArea.id = `graduationListItemDesc${index+1}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE GRADUATION REQUIREMENT';
+  removeButton.classList.add('remove-graduation-button');
+
+  // Setting values
+  descriptionTextArea.textContent = dataGraduation[id].graduationDesc;
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeGraduationList.appendChild(listItem);
+})
+
+// Add another Admission Requirement
+const addGraduationButton = document.querySelector('#add-graduation-button');
+addGraduationButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const latestIndex = graduationList.length + 1;
+  const listItem = document.createElement('li');
+  listItem.classList.add('graduationListItem')
+  listItem.id = 'graduationListItem' + (latestIndex).toString();
+
+  // Create description textarea
+  const descriptionTextArea = document.createElement('textarea');
+  descriptionTextArea.setAttribute('cols', 30);
+  descriptionTextArea.setAttribute('rows', 4);
+  descriptionTextArea.id = `graduationListItemDesc${latestIndex}` 
+
+  //Create remove button 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'REMOVE GRADUATION REQUIREMENT';
+  removeButton.classList.add('remove-graduation-button');
+
+  // Setting values
+  listItem.appendChild(descriptionTextArea);
+  listItem.appendChild(removeButton);
+  bscpeGraduationList.appendChild(listItem);
+  graduationList.push('graduationListItemCapt' + (latestIndex).toString());
+  addRemoveGraduationButton();
+})
+
+// Remove An Admission Requirement
+
+// Adding an event listener to the newly added remove button
+const addRemoveGraduationButton = () => {
+  const addRemoveGraduationButton = document.querySelectorAll('.remove-graduation-button');
+  addRemoveGraduationButton.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const index = graduationList.indexOf(e.currentTarget.parentElement.id);
+      if (index > -1) { // only splice array when item is found
+        graduationList.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      e.currentTarget.parentElement.remove()
+    })
+  })
+}
+
+const removeGraduationItems = () => {
+  // Refresh Program Educational Objectives list order
+  const listItems = document.querySelector('#grad-reqs').children;
+  graduationList.length = 0;
+  const listArray = [...listItems];
+  listArray.forEach((item, index) => {
+    item.id = 'graduationListItem' + (index + 1).toString();
+    const graduationDesc = item.querySelector('textarea:first-child');
+    graduationDesc.id = `graduationListItemDesc${index + 1}`;
+    graduationList.push(`graduationListItem${index + 1}`);
+  })
+}
+addRemoveGraduationButton();
+
