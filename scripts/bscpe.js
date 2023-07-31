@@ -43,11 +43,6 @@ menuToggle.onclick = function() {
 // Header ends here 
 
 
-// Filling webpage with dynamic content 
-
-// const guideContentIds = ['programDesc', 'curriculumDesc1', 'curriculumDesc2', 'curriculumDesc3', 'specializationFields1',
-//   'specializationFields2', 'programEducationalObjectives'];
-
 const fillContent = async () => {
     const docRef = doc(firestoreDb, "College Of Engineering", "bscpe");
     const docSnap = await getDoc(docRef);
@@ -55,6 +50,7 @@ const fillContent = async () => {
     Object.keys(data).forEach((id) => {
       if (docSnap.exists()) {
         const element = document.querySelector(`#${id}`)
+        console.log(id);
         element.textContent = data[id]
       } else {
         // docSnap.data() will be undefined in this case
