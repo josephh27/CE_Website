@@ -188,7 +188,7 @@ header ul li .dropdown {
     gap: 16px;
     position: absolute;
     padding: 15px;
-    /* background: rgba(0, 0, 0, 1); */
+    background: rgba(0, 0, 0, 1);
     font-size: 14px;
 }
 
@@ -200,7 +200,7 @@ header ul li .dropdown {
     gap: 16px;
     position: absolute;
     padding: 15px;
-    /* background: rgba(0, 0, 0, 1); */
+    background: rgba(0, 0, 0, 1);
     font-size: 14px;
 }
 
@@ -295,7 +295,7 @@ header .search {
     height: 50px;
     color: white;
     font-size: 16px;
-    /* background: #000; */
+    background: #000;
     border-radius: 20px;
     padding: 20px 0;
     padding-left: 20px;
@@ -344,12 +344,12 @@ button[type='logout'] {
 .department-header {
 	height: 400px;
 	width: 100%;
-	/* background: linear-gradient(
+	background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(190, 107, 23, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg"); */
+		url("../assets/images/pup-background_03.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
@@ -805,7 +805,7 @@ button[type='logout'] {
 	padding-block: 24px;
 	color: var(--clr-white);
 	border-radius: 10px;
-	/* background: var(--clr-primary-red); */
+	background: var(--clr-primary-red);
 }
 
 .field span {
@@ -847,7 +847,7 @@ button[type='logout'] {
 	width: 35px;
 	color: var(--clr-white);
 	border-radius: 50%;
-	/* background: var(--clr-primary-red); */
+	background: var(--clr-primary-red);
 	box-shadow: 0px 5px 5px var(--clr-black-25);
 }
 
@@ -858,7 +858,7 @@ button[type='logout'] {
 	width: 100%;
 	border-radius: 10px;
 	padding: 16px;
-	/* background: var(--clr-white); */
+	background: var(--clr-white);
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 /* Program Outcomes ends here */
@@ -968,12 +968,12 @@ button[type='logout'] {
 /* Footer */
 footer {
 	width: 100%;
-	/* background: linear-gradient(
+	background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(87, 0, 0, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg"); */
+		url("../assets/images/pup-background_03.jpg");
 	background-size: cover;
 	background-position: top;
 	font-family: "Open Sans", sans-serif;
@@ -1277,7 +1277,7 @@ li > textarea, .outcome > textarea {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	/* background: rgb(46, 164, 79); */
+	background: rgb(46, 164, 79);
 	font-family: "Open Sans", sans-serif;
 	color: var(--clr-white);
 	font-weight: bold;
@@ -1293,7 +1293,7 @@ li > textarea, .outcome > textarea {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	/* background: var(--clr-primary-red); */
+	background: var(--clr-primary-red);
 	font-family: "Open Sans", sans-serif;
 	color: var(--clr-white);
 	font-weight: bold;
@@ -1307,7 +1307,7 @@ li > textarea, .outcome > textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background: var(--clr-primary-red); */
+	background: var(--clr-primary-red);
 	font-family: "Open Sans", sans-serif;
 	color: var(--clr-white);
 	font-weight: bold;
@@ -1321,7 +1321,7 @@ li > textarea, .outcome > textarea {
 #add-peo-button:hover, #add-po-button:hover, #add-eml-button:hover, 
 #add-admission-button:hover, #add-adv-button:hover, #add-retention-button:hover,
 #add-graduation-button:hover  {
-	/* background: rgba(46, 164, 79, 0.8) */
+	background: rgba(46, 164, 79, 0.8)
 }
 
 .remove-peo-button:hover, .remove-po-button:hover,  .remove-eml-button:hover, 
