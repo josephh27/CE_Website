@@ -321,7 +321,7 @@ body {
 .checkpoint:nth-child(odd)::before,
 .checkpoint:nth-child(even)::before {
 	content: "";
-	/* background: var(--clr-black-50); */
+	background: var(--clr-black-50);
 	width: 3em;
 	height: 4px;
 	position: absolute;
@@ -705,7 +705,3 @@ a.link:hover {
 }
 /* Main container responsiveness ends here */
 /* Main container ends here */
-
-* {
-	color: black !important;
-}

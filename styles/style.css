@@ -88,7 +88,7 @@ header {
 	display: flex;
 	justify-content: center;
 	position: absolute;
-	/* background: rgba(255, 255, 255, 0.01); */
+	background: rgba(255, 255, 255, 0.01);
 	backdrop-filter: blur(2px);
 }
 
@@ -178,7 +178,7 @@ header ul li .dropdown {
 	gap: 16px;
 	position: absolute;
 	padding: 15px;
-	/* background: rgba(0, 0, 0, 1); */
+	background: rgba(0, 0, 0, 1);
 	font-size: 14px;
 }
 
@@ -190,7 +190,7 @@ header ul li .dropdown {
 	gap: 16px;
 	position: absolute;
 	padding: 15px;
-	/* background: rgba(0, 0, 0, 1); */
+	background: rgba(0, 0, 0, 1);
 	font-size: 14px;
 }
 
@@ -289,7 +289,7 @@ header .search {
 	height: 50px;
 	color: white;
 	font-size: 16px;
-	/* background: #000; */
+	background: #000;
 	border-radius: 20px;
 	padding: 20px 0;
 	padding-left: 20px;
@@ -489,7 +489,7 @@ header .search {
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	/* background: var(
+	background: var(
 		--pup-bg-red-01,
 		linear-gradient(
 			0deg,
@@ -498,7 +498,7 @@ header .search {
 		),
 		url("../assets/images/events_break.png"),
 		lightgray 50% / cover no-repeat
-	); */
+	);
 }
 
 .home-panel-3 > img:first-child {
@@ -526,7 +526,7 @@ header .search {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 80px;
-	/* background-image: url("../assets/images/pup-background-black_01.jpg"); */
+	background-image: url("../assets/images/pup-background-black_01.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -581,7 +581,7 @@ header .search {
 	padding: 1.25rem 2rem 1.25rem 2rem;
 	justify-content: center;
 	align-items: center;
-	/* background: #b00000; */
+	background: #b00000;
 	color: #fff;
 	text-align: center;
 	font-family: "Inter", sans-serif;
@@ -651,7 +651,7 @@ summary {
 	outline: none;
 	padding: 1rem;
 	display: block;
-	/* background: #b00000; */
+	background: #b00000;
 	color: white;
 	padding-left: 2.2rem;
 	position: relative;
@@ -669,7 +669,7 @@ details[open] summary::before {
 }
 
 .content {
-	/* background: white; */
+	background: white;
 	padding: 1rem;
 	border: 2px solid #b00000;
 	border-top: none;
@@ -708,7 +708,7 @@ details[open] summary::before {
 /* Start of home panel 6 and events carousel */
 .home-panel-6,
 .home-panel-4 {
-	/* background: no-repeat url("../assets/images/announcements_section.png"); */
+	background: no-repeat url("../assets/images/announcements_section.png");
 	background-size: cover;
 	display: flex;
 	max-width: 100%;
@@ -757,7 +757,7 @@ details[open] summary::before {
 	content: "";
 	height: 4px;
 	width: 30%;
-	/* background: var(--clr-primary-orange); */
+	background: var(--clr-primary-orange);
 	position: absolute;
 	left: 0;
 	bottom: -50%;
@@ -872,12 +872,12 @@ a {
 /* Footer */
 footer {
 	width: 100%;
-	/* background: linear-gradient(
+	background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(87, 0, 0, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg"); */
+		url("../assets/images/pup-background_03.jpg");
 	background-size: cover;
 	background-position: top;
 	font-family: "Open Sans", sans-serif;
@@ -1141,8 +1141,8 @@ footer .logo-name b {
 	align-items: center;
 	justify-content: center;
 
-	/* background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
-		url("../assets/images/cea-bg_01.png"); */
+	background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
+		url("../assets/images/cea-bg_01.png");
 	background-attachment: fixed;
 
 	background-size: cover;
@@ -1304,9 +1304,9 @@ footer .logo-name b {
 	min-height: 100vh;
 	width: 100%;
 	color: var(--clr-white);
- 
-	/*background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
-		url("../assets/images/cea-bg_01.png"); */
+
+	background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
+		url("../assets/images/cea-bg_01.png");
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
@@ -1402,12 +1402,12 @@ footer .logo-name b {
 	color: var(--clr-white);
 	font-family: "Open Sans", sans-serif;
 
-	/* background: linear-gradient(
+	background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(87, 0, 0, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg"); */
+		url("../assets/images/pup-background_03.jpg");
 	background-size: cover;
 	background-position: top;
 }
@@ -1488,8 +1488,3 @@ footer .logo-name b {
 }
 /* About page contents ends here */
 /* About page ends here */
-
-* {
-	color: black !important;
-}
-
