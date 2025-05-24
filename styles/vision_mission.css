@@ -231,7 +231,7 @@ body {
 	width: 35px;
 	color: var(--clr-white);
 	border-radius: 50%;
-	/* background: var(--clr-primary-red); */
+	background: var(--clr-primary-red);
 	box-shadow: 0px 5px 5px var(--clr-black-25);
 }
 
@@ -242,7 +242,7 @@ body {
 	width: 100%;
 	border-radius: 10px;
 	padding: 16px;
-	/* background: var(--clr-white); */
+	background: var(--clr-white);
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	line-height: 2;
 }
@@ -385,7 +385,3 @@ body {
 }
 /* Main container responsiveness ends here */
 /* Main container ends here */
-
-* {
-	color: black !important;
-}
