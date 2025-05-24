@@ -159,7 +159,7 @@ header ul li .dropdown {
 	gap: 16px;
 	position: absolute;
 	padding: 15px;
-	background: rgba(0, 0, 0, 1);
+	/* background: rgba(0, 0, 0, 1); */
 	font-size: 14px;
 }
 
@@ -171,7 +171,7 @@ header ul li .dropdown {
 	gap: 16px;
 	position: absolute;
 	padding: 15px;
-	background: rgba(0, 0, 0, 1);
+	/* background: rgba(0, 0, 0, 1); */
 	font-size: 14px;
 }
 
@@ -267,7 +267,7 @@ header .search {
 	height: 50px;
 	color: white;
 	font-size: 16px;
-	background: #000;
+	/* background: #000; */
 	border-radius: 20px;
 	padding: 20px 0;
 	padding-left: 20px;
@@ -312,12 +312,12 @@ header .search {
 .department-header {
 	height: 400px;
 	width: 100%;
-	background: linear-gradient(
+	/* background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(190, 107, 23, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg");
+		url("../assets/images/pup-background_03.jpg"); */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
@@ -810,7 +810,7 @@ header .search {
 	width: 35px;
 	color: var(--clr-white);
 	border-radius: 50%;
-	background: var(--clr-primary-red);
+	/* background: var(--clr-primary-red); */
 	box-shadow: 0px 5px 5px var(--clr-black-25);
 }
 
@@ -821,7 +821,7 @@ header .search {
 	width: 100%;
 	border-radius: 10px;
 	padding: 16px;
-	background: var(--clr-white);
+	/* background: var(--clr-white); */
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 /* Program Outcomes ends here */
@@ -933,12 +933,12 @@ header .search {
 /* Footer */
 footer {
 	width: 100%;
-	background: linear-gradient(
+	/* background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(87, 0, 0, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg");
+		url("../assets/images/pup-background_03.jpg"); */
 	background-size: cover;
 	background-position: top;
 	font-family: "Open Sans", sans-serif;
@@ -1210,4 +1210,8 @@ footer .logo-name b {
 	.directory-contents {
 		padding: 20px;
 	}
+}
+
+* {
+	color: black !important;
 }
