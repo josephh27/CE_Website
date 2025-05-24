@@ -242,7 +242,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	background: var(
+	/* background: var(
 		--pup-bg-red-01,
 		linear-gradient(
 			0deg,
@@ -251,7 +251,7 @@ body {
 		),
 		url("../assets/images/events_break.png"),
 		lightgray 50% / cover no-repeat
-	);
+	); */
 }
 
 .home-panel-3 > img:first-child {
@@ -349,7 +349,7 @@ body {
 /* Start of home panel 6 and events carousel */
 .home-panel-6,
 .home-panel-4 {
-	background: no-repeat url("../assets/images/announcements_section.png");
+	/* background: no-repeat url("../assets/images/announcements_section.png"); */
 	background-size: cover;
 	display: flex;
 	max-width: 100%;
@@ -398,7 +398,7 @@ body {
 	content: "";
 	height: 4px;
 	width: 30%;
-	background: var(--clr-primary-orange);
+	/* background: var(--clr-primary-orange); */
 	position: absolute;
 	left: 0;
 	bottom: -50%;
@@ -515,13 +515,13 @@ a {
 	align-items: center;
 	justify-content: center;
 
-	background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
+	/* background: linear-gradient(var(--clr-black-75) 80%, var(--clr-black) 100%),
 		url("../assets/images/cea-bg_01.png");
 	background-attachment: fixed;
 
 	background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 	overflow: hidden;
 }
 
@@ -566,7 +566,7 @@ a {
 	width: 100%;
 	color: var(--clr-white);
 
-	background: url("../assets/images/geometric-bg.png");
+	/* background: url("../assets/images/geometric-bg.png"); */
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
@@ -647,12 +647,12 @@ a {
 	color: var(--clr-white);
 	font-family: "Open Sans", sans-serif;
 
-	background: linear-gradient(
+	/* background: linear-gradient(
 			0deg,
 			rgba(87, 0, 0, 0.925) 0%,
 			rgba(87, 0, 0, 0.925) 100%
 		),
-		url("../assets/images/pup-background_03.jpg");
+		url("../assets/images/pup-background_03.jpg"); */
 	background-size: cover;
 	background-position: top;
 }
@@ -733,3 +733,7 @@ a {
 }
 /* About page contents ends here */
 /* About page ends here */
+
+* {
+	color: black !important;
+}
